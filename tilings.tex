@@ -29,11 +29,11 @@
     \begin{definition}
       A bi-infinite array $(a_{ij})_{i,j\in\ZZ}$ with $a_{ij}\in\ZZ_{>0}$ is called an \emph{$\fsl_2$-tiling of $\ZZ^2$} if the entries satisfy the relation
       \begin{equation}\label{eq:sl2 recursion}
-        a_{ij}a_{i+1,j-1}-a_{i+1,j}a_{i,j-1}=1.
+        a_{i,j+1}a_{i+1,j}-a_{i+1,j+1}a_{ij}=1.
       \end{equation}
       A bi-infinite array $(b_{ij})_{i,j\in\ZZ}$ with $b_{ij}\in\ZZ_{>0}$  is called an \emph{anti-$\fsl_2$-tiling of $\ZZ^2$} if the entries satisfy the relation
       \begin{equation}\label{eq:anti-sl2 recursion}
-        b_{ij}b_{i+1,j-1}-b_{i,j-1}b_{i+1,j}=-1.
+        b_{i,j+1}b_{i+1,j}-b_{i+1,j+1}b_{ij}=-1.
       \end{equation}
     \end{definition}
     The notion of an anti-$\fsl_2$-tiling is not actually giving anything new as shown by the following lemma, however this notion will be useful for our considerations in higher dimensions.
