@@ -130,7 +130,7 @@ Paris-Saclay, 91405 Orsay, France.}
     An array $(a_{\bi})_{\bi\in\ZZ^n}$ with $a_{\bi}\in\ZZ_{>0}$ is called an \emph{$\bepsilon-\fsl_2$-tiling of $\ZZ^n$} if for each $1\le k<\ell\le n$ we have
     \saySS{Can we make this into a symmetric definition to allow also $k>\ell$?}
     \begin{equation}\label{eq:higher sl2 recursion}
-      a_{\bi+\be_\ell}a_{\bi+e_k}-a_{\bi}a_{\bi+\be_k+\be_\ell}=\epsilon_{k\ell}.
+      a_{\bi+\be_\ell}a_{\bi+\be_k}-a_{\bi}a_{\bi+\be_k+\be_\ell}=\epsilon_{k\ell}.
     \end{equation}
   \end{definition}
   The situation is now different than the $n=2$ case, all the $\bepsilon$-$\fsl_2$-tilings are not necessarily equivalent, however there do remain relations among them.
@@ -141,7 +141,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{lemma}
 
   \begin{definition}
-    Let $\epsilon = 1$ (resp. $\epsilon=-1$) and $\bepsilon$ be such that $\epsilon_{k\ell}=\epsilon$ whenever $k<\ell$. 
+    Let $\bepsilon$ be the signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k<\ell$
     We call any $\bepsilon$-$\fsl_2$-tiling an \emph{$\fsl_2$-tiling} (resp. \emph{anti-$\fsl_2$-tiling}) of $\ZZ^n$.
     \saySS{Do you have good name for these two matrices?}
   \end{definition}
@@ -223,9 +223,10 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{proof}
 
   \begin{proposition}\label{pr:nonexistence}
-    There does not exist any $\fsl_2$-tiling of $\ZZ^3$.
+    There does not exist any $\fsl_2$-tiling of $\ZZ^n$ for $n\geq3$.
   \end{proposition}
   \begin{proof}
+    It suffices to show that there is no $\fsl_2$-tiling of $\ZZ^3$.
     Assume $(a_{\bi})_{\bi\in\ZZ^3}$ is an $\fsl_2$-tiling of $\ZZ^3$.
     Pick $\bi$ with $a_{\bi}$ minimal.
     Applying \eqref{eq:higher sl2 recursion} gives
@@ -247,7 +248,8 @@ Paris-Saclay, 91405 Orsay, France.}
 
   We are finally ready to classify all $\bepsilon$-$\fsl_2$-tilings for any $n\geq3$.
   \begin{theorem}
-    There are precisely $2^{n-1}$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\fsl_2$-tiling of $\ZZ^n$.
+    There are precisely $2^{n-1}$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\fsl_2$-tiling of $\ZZ^n$ for $n\geq3$.
+    They are all the signature matrices obtainable from the one yielding the anti-$\fsl_2$-tiling by repeated application of Lemma~\ref{le:flip}.
     Whenever an $\bepsilon$-$\fsl_2$-tiling exists it is unique up to translation.
   \end{theorem}
   \begin{proof}
