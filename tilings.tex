@@ -35,8 +35,8 @@ Paris-Saclay, 91405 Orsay, France.}
 \email{pierre-guy.plamondon@math.u-psud.fr}
 
 \author[Rupel]{Dylan Rupel}
-\address[Dylan Rupel]{}
-\email{}
+\address[Dylan Rupel]{Department of Mathematics, University of Notre Dame, Notre Dame, Indiana 46556, USA.}
+\email{drupel@nd.edu}
 
 \author[Stella]{Salvatore Stella}
 \address[Salvatore Stella]{IN$d$AM - Marie Curie Actions fellow, Universit\`a ``La Sapienza'', Roma, Italy.}
@@ -60,11 +60,11 @@ Paris-Saclay, 91405 Orsay, France.}
   \begin{definition}[\cite{AssemReutenauerSmith}]
     A bi-infinite array $(a_{ij})_{i,j\in\ZZ}$ with $a_{ij}\in\ZZ_{>0}$ is called an \emph{$\fsl_2$-tiling of $\ZZ^2$} if the entries satisfy the relation
     \begin{equation}\label{eq:sl2 recursion}
-      a_{i,j+1}a_{i+1,j}-a_{i+1,j+1}a_{ij}=1.
+      a_{i,j+1}a_{i+1,j}-a_{ij}a_{i+1,j+1}=1.
     \end{equation}
     A bi-infinite array $(b_{ij})_{i,j\in\ZZ}$ with $b_{ij}\in\ZZ_{>0}$  is called an \emph{anti-$\fsl_2$-tiling of $\ZZ^2$} if the entries satisfy the relation
     \begin{equation}\label{eq:anti-sl2 recursion}
-      b_{i,j+1}b_{i+1,j}-b_{i+1,j+1}b_{ij}=-1.
+      b_{i,j+1}b_{i+1,j}-b_{ij}b_{i+1,j+1}=-1.
     \end{equation}
   \end{definition}
   The notion of an anti-$\fsl_2$-tiling is not actually giving anything new as shown by the following lemma, however this notion will be useful for our considerations in higher dimensions.
@@ -120,8 +120,9 @@ Paris-Saclay, 91405 Orsay, France.}
 
 \section{$\fsl_2$-Tilings in Higher Dimensions}
   Denote integer vectors by $\bi=(i_1\dots,i_n)$ and by $\be_k$ the $k$-th unit vector.
-  We call \emph{signature matrix} a skew-symmetric $n\times n$ matrix $\bepsilon=(\epsilon_{k\ell})$ with $\epsilon_{k\ell}=\pm 1$ whenever $k\neq \ell$. 
+  A \emph{signature matrix} is any skew-symmetric $n\times n$ matrix $\bepsilon=(\epsilon_{k\ell})$ with $\epsilon_{k\ell}=\pm 1$ whenever $k\neq \ell$. 
   \saySS{I decided to switch to matrix notation because it makes the argument for higher rank slightly easier to write; I am open to reverting to the previous notation if you prefer. Note that the notation is redundant: the bottom part of $\bepsilon$ does not play any role. We could probably add a comment on this.}
+  \sayDR{Why is the matrix skew-symmetric?  It seems to me that we don't actually care about the ordering of the indices and this matrix should be symmetric.}
   \begin{definition}
     Fix a signature matrix $\bepsilon$.  
     An array $(a_{\bi})_{\bi\in\ZZ^n}$ with $a_{\bi}\in\ZZ_{>0}$ is called an \emph{$\bepsilon-\fsl_2$-tiling of $\ZZ^n$} if for each $1\le k<\ell\le n$ we have
@@ -138,7 +139,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{lemma}
 
   \begin{definition}
-    Let $\bepsilon$ be the signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k<\ell$
+    Let $\bepsilon$ be the signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k<\ell$.
     We call any $\bepsilon$-$\fsl_2$-tiling an \emph{$\fsl_2$-tiling} (resp. \emph{anti-$\fsl_2$-tiling}) of $\ZZ^n$.
     \saySS{Do you have good name for these two matrices?}
   \end{definition}
@@ -148,7 +149,7 @@ Paris-Saclay, 91405 Orsay, France.}
     Then for any $r\in\ZZ$ the set $\{a_{\bi}: \sum_{j=1}^n i_j=r\}$ consists of a single element.
   \end{lemma}
   \begin{proof}
-    Pick any three distinct indices $j,k,\ell\in[i,n]$.
+    Pick any three distinct indices $j,k,\ell\in[1,n]$.
     To prove our claim we compute $a_{\bi+\be_j+\be_k+\be_\ell}$ in terms of $a_{\bi}, a_{\bi+\be_j}, a_{\bi+\be_k}, a_{\bi+\be_\ell}$ in three different ways.
     For simplicity of notation we set:
     \[
@@ -163,19 +164,19 @@ Paris-Saclay, 91405 Orsay, France.}
     The following picture will be useful.
     \begin{center}
       \begin{tikzpicture}
-        \draw (0,0) -- ++(1,1)  node[above] {$z$} ;
+        \draw (0,0) -- ++(1.5,1)  node[above] {$z$} ;
         \draw (0,0) node[left] {$\frac{xz-\epsilon}{a}$} ;
-        \draw (0,0) -- ++(0,-1.3) node[left] {$x$} ;
-        \draw [dotted] (1,1) -- ++(0,-1.3) node[right] {$a$};
-        \draw [dotted] (0,-1.3) -- ++(1,1) ;
-        \draw (0,0) -- ++(1.5,-1) node[right] {?} ;
-        \draw (1,1) -- ++(1.5,-1) node[right] {$\frac{yz-\epsilon}{a}$};
-        \draw (0,-1.3) -- ++(1.5,-1) node[right]{$\frac{xy-\epsilon}{a}$};
-        \draw [dotted] (1,-.3) -- ++(1.5,-1) ;
-        \draw (1.5,-1) -- ++(0,-1.3) ;
-        \draw (1.5,-1) -- ++(1,1) ;
-        \draw (1.5,-2.3) -- ++(1,1) ;
-        \draw (2.5,0) -- ++(0,-1.3) node[right]{$y$} ;
+        \draw (0,0) -- ++(0,-1.6) node[left] {$x$} ;
+        \draw [dotted] (1.5,1) -- ++(0,-1.6) node[above right] {$a$};
+        \draw [dotted] (0,-1.6) -- ++(1.5,1) ;
+        \draw (0,0) -- ++(1.5,-1) node[below right] {?} ;
+        \draw (1.5,1) -- ++(1.5,-1) node[right] {$\frac{yz-\epsilon}{a}$};
+        \draw (0,-1.6) -- ++(1.5,-1) node[below]{$\frac{xy-\epsilon}{a}$};
+        \draw [dotted] (1.5,-.6) -- ++(1.5,-1);
+        \draw (1.5,-1) -- ++(0,-1.6) ;
+        \draw (1.5,-1) -- ++(1.5,1) ;
+        \draw (1.5,-2.6) -- ++(1.5,1) ;
+        \draw (3,0) -- ++(0,-1.6) node[right]{$y$};
       \end{tikzpicture}
     \end{center}
     Using \eqref{eq:higher sl2 recursion} three times we get
@@ -257,16 +258,18 @@ Paris-Saclay, 91405 Orsay, France.}
     \[
       \bepsilon = 
       \left(
-        \begin{array}{ccccc}
-          0          & -1     & \cdots  & -1              & -\epsilon_1     \\
-          1          & \ddots & \ddots  & \vdots          & \vdots          \\
-          \vdots     & \ddots & \ddots  & -1              & \vdots          \\
-          1          & \cdots & 1       & 0               & -\epsilon_{n-1} \\
-          \epsilon_1 & \cdots & \cdots  & \epsilon_{n-1}  & 0
+        \begin{array}{cccccc}
+          0          & -1         & \cdots & -1             & -1             & -\epsilon_1     \\
+          1          & 0          & \cdots & -1             & -1             & -\epsilon_2     \\
+          \vdots     & \vdots     & \ddots & \vdots         & \vdots         & \vdots          \\
+          1          & 1          & \cdots & 0              & -1             & -\epsilon_{n-2} \\
+          1          & 1          & \cdots & 1              & 0              & -\epsilon_{n-1} \\
+          \epsilon_1 & \epsilon_2 & \cdots & \epsilon_{n-2} & \epsilon_{n-1} & 0
         \end{array}
       \right)
     \]
     \saySS{This matrix could use some aestetic improvements}
+    \sayDR{What do you think of that?}
     by repeated application of Lemma~\ref{le:flip} in directions different from $n$.
     We claim now that, for an $\bepsilon$-$\fsl_2$-tiling of $\ZZ^n$ to exist, all the entries $\epsilon_j$ needs to be equal. 
     If not assume without loss of generality that $\epsilon_1 = -\epsilon_2 = -1$; then any slice of the corresponding $\bepsilon^{(1)}$-$\fsl_2$-tiling obtained fixing values for $i_4,\dots,i_n$ would be an $\fsl_2$-tiling of $\ZZ^3$ in contradiction with Proposition~\ref{pr:nonexistence}.
@@ -274,7 +277,7 @@ Paris-Saclay, 91405 Orsay, France.}
 
     The counting of signature matrices giving raise to $\bepsilon$-$\fsl_2$-tilings follows immediately once one notices that 
     \[
-      \left(\bepsilon^{(j)}\right)^{(k)}=\left(\bepsilon^{(j)}\right)^{(k)}
+      \left(\bepsilon^{(j)}\right)^{(k)}=\left(\bepsilon^{(k)}\right)^{(j)}
     \]
     for every $j,k\in[1,n]$ and that applying Lemma~\ref{le:flip} with $n$ distinct choices of $r$ fixes $\bepsilon$.
   \end{proof}
