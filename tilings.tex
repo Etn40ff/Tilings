@@ -78,12 +78,14 @@ Paris-Saclay, 91405 Orsay, France.}
     There exist infinitely many $\fsl_2$-tilings of $\ZZ^2$.
   \end{theorem}
 
-  In fact, it is shown in \cite{AssemReutenauerSmith} that any ``frontier'', or broken line of $1$'s in the plane, can be completed into a unique $\fsl_2$-frieze.
+  In fact, it is shown in \cite{AssemReutenauerSmith} that any ``frontier'', or broken line of $1$'s in the plane, can be completed into a unique $\fsl_2$-tiling.
   \saySS{We never introduced $\fsl_2$-friezes; should we replace this?}
+  \sayPGP{My bad; it should be $\fsl_2$-tiling.  I changed it.}
   An interpretation of all possible $\fsl_2$-tilings involving triangulations of a polygon with infinitely many vertices was later given in \cite{HolmJorgensen}.
 
   The following $\fsl_2$-tiling will be relevant in our higher dimensional analysis.
   \saySS{Do you think it could make more sense to make this into an anti-tiling example?}
+  \sayPGP{Either way is fine for me.}
   \begin{example}\label{ex:Fibonacci}
     Consider the $\fsl_2$-tiling $(a_{ij})_{i,j\in\ZZ}$ of $\ZZ^2$ with $a_{ij}=1$ if $i-j\in\{0,1\}$.  
     Then using \eqref{eq:sl2 recursion} and the well-known recursion $F_{2r-1}F_{2r+3}=F_{2r+1}^2+1$ $(r\ge1)$ for the odd Fibonacci numbers, we see that
@@ -123,6 +125,7 @@ Paris-Saclay, 91405 Orsay, France.}
   A \emph{signature matrix} is any skew-symmetric $n\times n$ matrix $\bepsilon=(\epsilon_{k\ell})$ with $\epsilon_{k\ell}=\pm 1$ whenever $k\neq \ell$. 
   \saySS{I decided to switch to matrix notation because it makes the argument for higher rank slightly easier to write; I am open to reverting to the previous notation if you prefer. Note that the notation is redundant: the bottom part of $\bepsilon$ does not play any role. We could probably add a comment on this.}
   \sayDR{Why is the matrix skew-symmetric?  It seems to me that we don't actually care about the ordering of the indices and this matrix should be symmetric.}
+  \sayPGP{I agree with Dylan.  Making the matrix symmetric would allow us to drop the $k<\ell$ condition in Definition 5, thus addressing Salvatore's comment below. The matrix notation is very good, though.}
   \begin{definition}
     Fix a signature matrix $\bepsilon$.  
     An array $(a_{\bi})_{\bi\in\ZZ^n}$ with $a_{\bi}\in\ZZ_{>0}$ is called an \emph{$\bepsilon-\fsl_2$-tiling of $\ZZ^n$} if for each $1\le k<\ell\le n$ we have
@@ -204,7 +207,8 @@ Paris-Saclay, 91405 Orsay, France.}
 
   \begin{theorem}
     There exists a unique (up to translation) anti-$\fsl_2$-tiling of $\ZZ^n$.
-  \end{theorem}
+    \sayPGP{Should we make explicit in the statement that all entries are Fibonacci numbers?}
+  \end{theorem}  
   \begin{proof}
     Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is a anti-$\fsl_2$-tiling of $\ZZ^n$.  
     Pick $\bi$ with $a_{\bi}$ minimal.  
