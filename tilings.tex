@@ -18,6 +18,7 @@
 \newtheorem{example}[theorem]{Example}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
 
 \newcommand{\bepsilon}{\boldsymbol{\epsilon}}
 \newcommand{\be}{\boldsymbol{e}}
@@ -79,8 +80,6 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{theorem}
 
   In fact, it is shown in \cite{AssemReutenauerSmith} that any ``frontier'', or broken line of $1$'s in the plane, can be completed into a unique $\fsl_2$-tiling.
-  \saySS{We never introduced $\fsl_2$-friezes; should we replace this?}
-  \sayPGP{My bad; it should be $\fsl_2$-tiling.  I changed it.}
   An interpretation of all possible $\fsl_2$-tilings involving triangulations of a polygon with infinitely many vertices was later given in \cite{HolmJorgensen}.
 
   The following $\fsl_2$-tiling will be relevant in our higher dimensional analysis.
@@ -122,18 +121,16 @@ Paris-Saclay, 91405 Orsay, France.}
 
 \section{$\fsl_2$-Tilings in Higher Dimensions}
   Denote integer vectors by $\bi=(i_1\dots,i_n)$ and by $\be_k$ the $k$-th unit vector.
-  A \emph{signature matrix} is any skew-symmetric $n\times n$ matrix $\bepsilon=(\epsilon_{k\ell})$ with $\epsilon_{k\ell}=\pm 1$ whenever $k\neq \ell$. 
-  \saySS{I decided to switch to matrix notation because it makes the argument for higher rank slightly easier to write; I am open to reverting to the previous notation if you prefer. Note that the notation is redundant: the bottom part of $\bepsilon$ does not play any role. We could probably add a comment on this.}
-  \sayDR{Why is the matrix skew-symmetric?  It seems to me that we don't actually care about the ordering of the indices and this matrix should be symmetric.}
-  \sayPGP{I agree with Dylan.  Making the matrix symmetric would allow us to drop the $k<\ell$ condition in Definition 5, thus addressing Salvatore's comment below. The matrix notation is very good, though.}
+  A \emph{signature matrix} is a symmetric $n\times n$ matrix $\bepsilon=(\epsilon_{k\ell})$ with $\epsilon_{k\ell}=\pm 1$ whenever $k\neq \ell$ and $\epsilon_{kk}=1$. 
   \begin{definition}
     Fix a signature matrix $\bepsilon$.  
-    An array $(a_{\bi})_{\bi\in\ZZ^n}$ with $a_{\bi}\in\ZZ_{>0}$ is called an \emph{$\bepsilon-\fsl_2$-tiling of $\ZZ^n$} if for each $1\le k<\ell\le n$ we have
-    \saySS{Can we make this into a symmetric definition to allow also $k>\ell$?}
+    An array $(a_{\bi})_{\bi\in\ZZ^n}$ with $a_{\bi}\in\ZZ_{>0}$ is called an \emph{$\bepsilon-\fsl_2$-tiling of $\ZZ^n$} if for each $k<\neq\ell$ we have
     \begin{equation}\label{eq:higher sl2 recursion}
       a_{\bi+\be_\ell}a_{\bi+\be_k}-a_{\bi}a_{\bi+\be_k+\be_\ell}=\epsilon_{k\ell}.
     \end{equation}
   \end{definition}
+  The requirement on the diagonal entries of signature matrices might seem arbitrary right now because they do not play any role in the above definition; we will see later on that it is indeed a consistent choice.
+  
   The situation is now different than the $n=2$ case, all the $\bepsilon$-$\fsl_2$-tilings are not necessarily equivalent, however there do remain relations among them.
   \begin{lemma}\label{le:flip}
     Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}=(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if $k=r$ or $\ell=r$ and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise. 
@@ -206,8 +203,10 @@ Paris-Saclay, 91405 Orsay, France.}
   We now come to our first main result: in dimension $n$, an ``infinite staircase'' of $1$'s yields the only possible anti-$\fsl_2$-tiling.
 
   \begin{theorem}
-    There exists a unique (up to translation) anti-$\fsl_2$-tiling of $\ZZ^n$.
-    \sayPGP{Should we make explicit in the statement that all entries are Fibonacci numbers?}
+    There exists a unique (up to translation) anti-$\fsl_2$-tiling of $\ZZ^n$. 
+    Any of its ``two dimensional slices'' obtained by fixing all but two of the coordinates of $\bi$ is the unique anti-$\fsl_2$-tiling of $\ZZ^2$.
+    In particular all the integers appearing are odd Fibonacci numbers.
+    \saySS{Maybe phrasing here could be improved}
   \end{theorem}  
   \begin{proof}
     Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is a anti-$\fsl_2$-tiling of $\ZZ^n$.  
@@ -263,12 +262,12 @@ Paris-Saclay, 91405 Orsay, France.}
       \bepsilon = 
       \left(
         \begin{array}{cccccc}
-          0          & -1         & \cdots & -1             & -1             & -\epsilon_1     \\
-          1          & 0          & \cdots & -1             & -1             & -\epsilon_2     \\
+          1          & -1         & \cdots & -1             & -1             & \epsilon_1     \\
+          -1         & 1          & \cdots & -1             & -1             & \epsilon_2     \\
           \vdots     & \vdots     & \ddots & \vdots         & \vdots         & \vdots          \\
-          1          & 1          & \cdots & 0              & -1             & -\epsilon_{n-2} \\
-          1          & 1          & \cdots & 1              & 0              & -\epsilon_{n-1} \\
-          \epsilon_1 & \epsilon_2 & \cdots & \epsilon_{n-2} & \epsilon_{n-1} & 0
+          -1         & 1          & \cdots & 1              & -1             & \epsilon_{n-2} \\
+          -1         & -1         & \cdots & -1             & 1              & \epsilon_{n-1} \\
+          \epsilon_1 & \epsilon_2 & \cdots & \epsilon_{n-2} & \epsilon_{n-1} & 1
         \end{array}
       \right)
     \]
@@ -283,6 +282,10 @@ Paris-Saclay, 91405 Orsay, France.}
     \]
     for every $j,k\in[1,n]$ and that applying Lemma~\ref{le:flip} with $n$ distinct choices of $r$ fixes $\bepsilon$.
   \end{proof}
+  
+  \begin{remark}
+    It is now clear why we choose the diagonal entries of $\bepsilon$ to be equal to $1$: any $\bepsilon$-$\fsl_2$-tiling consists of odd Fibonacci numbers and each 1-dimensional slice satisfies \eqref{eq:higher sl2 recursion} with $k=\ell$.
+  \end{remark}
 
 \section*{Acknowledgements}
   These results were obtained while we were taking part in the Conference on Cluster Algebras and Representation Theory at the KIAS in Seoul, South Korea. 
