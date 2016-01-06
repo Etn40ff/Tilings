@@ -44,8 +44,8 @@ Paris-Saclay, 91405 Orsay, France.}
 \email{stella@mat.uniroma1.it}
 
 \author[Tumarkin]{Pavel Tumarkin}
-\address[Pavel Tumarkin]{}
-\email{}
+\address[Pavel Tumarkin]{Department of Mathematical Sciences, Durham University, South Road, Durham, DH1 3LE, UK.}
+\email{pavel.tumarkin@durham.ac.uk}
 
 
 \title{$\fsl_2$-Tilings Do Not Exist in Higher Dimensions (mostly)}
@@ -133,13 +133,14 @@ Paris-Saclay, 91405 Orsay, France.}
   
   The situation is now different than the $n=2$ case, all the $\bepsilon$-$\fsl_2$-tilings are not necessarily equivalent, however there do remain relations among them.
   \begin{lemma}\label{le:flip}
-    Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}=(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if $k=r$ or $\ell=r$ and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise. 
+    Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}=(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if $k=r$ or $\ell=r$ \sayPT{One probably needs $k\ne\ell$ here} and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise. 
     Clearly $\bepsilon^{(r)}$ is a signature matrix.
     If $(a_{\bi})_{\bi\in\ZZ^n}$ is an $\bepsilon-\fsl_2$-tiling, then taking $b_{\bi}=a_{\bi-2i_r\be_r}$ gives an $\bepsilon^{(r)}-\fsl_2$-tiling.
   \end{lemma}
 
   \begin{definition}
     Let $\bepsilon$ be the signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k<\ell$.
+\sayPT{$k\ne\ell$ means the same but looks better to me}
     We call any $\bepsilon$-$\fsl_2$-tiling an \emph{$\fsl_2$-tiling} (resp. \emph{anti-$\fsl_2$-tiling}) of $\ZZ^n$.
     \saySS{Do you have good name for these two matrices?}
   \end{definition}
@@ -207,6 +208,7 @@ Paris-Saclay, 91405 Orsay, France.}
     Any of its ``two dimensional slices'' obtained by fixing all but two of the coordinates of $\bi$ is the unique anti-$\fsl_2$-tiling of $\ZZ^2$.
     In particular all the integers appearing are odd Fibonacci numbers.
     \saySS{Maybe phrasing here could be improved}
+    \sayPT{In view of Theorem 3, ``the unique anti-$\fsl_2$-tiling of $\ZZ^2$'' looks a bit weird. It supposed to be the one with a staircase of 1's, right?}
   \end{theorem}  
   \begin{proof}
     Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is a anti-$\fsl_2$-tiling of $\ZZ^n$.  
@@ -218,6 +220,7 @@ Paris-Saclay, 91405 Orsay, France.}
     where we applied Lemma~\ref{le:constant slices} in the last equality.
     If $a_{\bi}>1$, this implies $a_{\bi+\be_1}<a_{\bi}$ or $a_{\bi-\be_2}<a_{\bi}$, contradicting minimality, so we must have $a_{\bi}=1$.
     This implies $\{a_{\bi+\be_k},a_{\bi-\be_k}\}=\{1,2\}$.
+\sayPT{Shouldn't this be $\{a_{\bi+\be_k},a_{\bi-\be_\ell}\}=\{1,2\}$, or it is essentially the same?}
     Without loss of generality we will assume $a_{\bi+\be_k}=2$ and $\sum_{j=1}^n i_j=1$.
     Then applying \eqref{eq:higher sl2 recursion} repeatedly shows that $a_{\bi'}$ with $\sum_{j=1}^n i'_j=r\ge1$ is exactly the $r^{th}$ odd Fibonacci number $F_{2r-1}$ (see Example~\ref{ex:Fibonacci}).
     Similarly one sees that $a_{\bi'}$ with $\sum_{j=1}^n i'_j =r\le0$ is the odd Fibonacci number $F_{-2r+1}$.
