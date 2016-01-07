@@ -27,8 +27,8 @@
 \newcommand{\ZZ}{\mathbb{Z}}
 
 \author[Demonet]{Laurent Demonet}
-\address[Laurent Demonet]{}
-\email{}
+\address[Laurent Demonet]{Graduate School of Mathematics, Nagoya University, Furocho, Chikusaku, 464-8602 Nagoya, Japan}
+\email{Laurent.Demonet@normalesup.org}
 
 \author[Plamondon]{Pierre-Guy Plamondon}
 \address[Pierre-Guy Plamondon]{Laboratoire de Math\'ematiques d'Orsay, Univ. Paris-Sud, CNRS, Univ.
@@ -133,14 +133,18 @@ Paris-Saclay, 91405 Orsay, France.}
   
   The situation is now different than the $n=2$ case, all the $\bepsilon$-$\fsl_2$-tilings are not necessarily equivalent, however there do remain relations among them.
   \begin{lemma}\label{le:flip}
-    Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}=(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if $k=r$ or $\ell=r$ \sayPT{One probably needs $k\ne\ell$ here} and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise. 
+    Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}=(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if $k=r$ or $\ell=r$ (and $k\neq\ell$)
+    \sayPT{One probably needs $k\ne\ell$ here} 
+    \saySS{Yes, this was a leftover of the old notation where $\bepsilon$ was skew-symmetric. It is fixd and both comments can be removed now.}
+    and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise. 
     Clearly $\bepsilon^{(r)}$ is a signature matrix.
     If $(a_{\bi})_{\bi\in\ZZ^n}$ is an $\bepsilon-\fsl_2$-tiling, then taking $b_{\bi}=a_{\bi-2i_r\be_r}$ gives an $\bepsilon^{(r)}-\fsl_2$-tiling.
   \end{lemma}
 
   \begin{definition}
-    Let $\bepsilon$ be the signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k<\ell$.
-\sayPT{$k\ne\ell$ means the same but looks better to me}
+    Let $\bepsilon$ be the signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k\neq\ell$ (resp. $k=\ell$).
+    \sayPT{$k\ne\ell$ means the same but looks better to me}
+    \saySS{Same here; now it is fixed}
     We call any $\bepsilon$-$\fsl_2$-tiling an \emph{$\fsl_2$-tiling} (resp. \emph{anti-$\fsl_2$-tiling}) of $\ZZ^n$.
     \saySS{Do you have good name for these two matrices?}
   \end{definition}
@@ -209,6 +213,7 @@ Paris-Saclay, 91405 Orsay, France.}
     In particular all the integers appearing are odd Fibonacci numbers.
     \saySS{Maybe phrasing here could be improved}
     \sayPT{In view of Theorem 3, ``the unique anti-$\fsl_2$-tiling of $\ZZ^2$'' looks a bit weird. It supposed to be the one with a staircase of 1's, right?}
+    \saySS{Yes, that's the one I meant. How do we fix this?}
   \end{theorem}  
   \begin{proof}
     Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is a anti-$\fsl_2$-tiling of $\ZZ^n$.  
@@ -220,7 +225,8 @@ Paris-Saclay, 91405 Orsay, France.}
     where we applied Lemma~\ref{le:constant slices} in the last equality.
     If $a_{\bi}>1$, this implies $a_{\bi+\be_1}<a_{\bi}$ or $a_{\bi-\be_2}<a_{\bi}$, contradicting minimality, so we must have $a_{\bi}=1$.
     This implies $\{a_{\bi+\be_k},a_{\bi-\be_k}\}=\{1,2\}$.
-\sayPT{Shouldn't this be $\{a_{\bi+\be_k},a_{\bi-\be_\ell}\}=\{1,2\}$, or it is essentially the same?}
+    \sayPT{Shouldn't this be $\{a_{\bi+\be_k},a_{\bi-\be_\ell}\}=\{1,2\}$, or it is essentially the same?}
+    \saySS{I think they are the same: because of lemma 8 $a_{\bi-\be_\ell}$ should be the same as $a_{\bi-\be_k}$; am I right?}
     Without loss of generality we will assume $a_{\bi+\be_k}=2$ and $\sum_{j=1}^n i_j=1$.
     Then applying \eqref{eq:higher sl2 recursion} repeatedly shows that $a_{\bi'}$ with $\sum_{j=1}^n i'_j=r\ge1$ is exactly the $r^{th}$ odd Fibonacci number $F_{2r-1}$ (see Example~\ref{ex:Fibonacci}).
     Similarly one sees that $a_{\bi'}$ with $\sum_{j=1}^n i'_j =r\le0$ is the odd Fibonacci number $F_{-2r+1}$.
