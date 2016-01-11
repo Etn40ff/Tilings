@@ -6,7 +6,7 @@
 %%% discussion tools; remove this before publishing
 \usepackage[draft]{say}
 \newcommand{\sayDR}[1]{\say[DR]{#1}}
-\newcommand{\sayGD}[1]{\say[LD]{#1}}
+\newcommand{\sayLD}[1]{\say[LD]{#1}}
 \newcommand{\sayPGP}[1]{\say[PGP]{#1}}
 \newcommand{\sayPT}[1]{\say[PT]{#1}}
 \newcommand{\saySS}[1]{\say[SS]{#1}}
@@ -124,7 +124,7 @@ Paris-Saclay, 91405 Orsay, France.}
   A \emph{signature matrix} is a symmetric $n\times n$ matrix $\bepsilon=(\epsilon_{k\ell})$ with $\epsilon_{k\ell}=\pm 1$ whenever $k\neq \ell$ and $\epsilon_{kk}=1$. 
   \begin{definition}
     Fix a signature matrix $\bepsilon$.  
-    An array $(a_{\bi})_{\bi\in\ZZ^n}$ with $a_{\bi}\in\ZZ_{>0}$ is called an \emph{$\bepsilon-\fsl_2$-tiling of $\ZZ^n$} if for each $k<\neq\ell$ we have
+    An array $(a_{\bi})_{\bi\in\ZZ^n}$ with $a_{\bi}\in\ZZ_{>0}$ is called an \emph{$\bepsilon-\fsl_2$-tiling of $\ZZ^n$} if for each $k < \neq\ell$\sayLD{to replace by $k \neq \ell$} we have
     \begin{equation}\label{eq:higher sl2 recursion}
       a_{\bi+\be_\ell}a_{\bi+\be_k}-a_{\bi}a_{\bi+\be_k+\be_\ell}=\epsilon_{k\ell}.
     \end{equation}
@@ -133,24 +133,20 @@ Paris-Saclay, 91405 Orsay, France.}
   
   The situation is now different than the $n=2$ case, all the $\bepsilon$-$\fsl_2$-tilings are not necessarily equivalent, however there do remain relations among them.
   \begin{lemma}\label{le:flip}
-    Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}=(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if $k=r$ or $\ell=r$ (and $k\neq\ell$)
-    \sayPT{One probably needs $k\ne\ell$ here} 
-    \saySS{Yes, this was a leftover of the old notation where $\bepsilon$ was skew-symmetric. It is fixd and both comments can be removed now.}
-    and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise. 
+    Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}=(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if $k=r$ or $\ell=r$ \sayPT{One probably needs $k\ne\ell$ here} and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise. 
     Clearly $\bepsilon^{(r)}$ is a signature matrix.
     If $(a_{\bi})_{\bi\in\ZZ^n}$ is an $\bepsilon-\fsl_2$-tiling, then taking $b_{\bi}=a_{\bi-2i_r\be_r}$ gives an $\bepsilon^{(r)}-\fsl_2$-tiling.
   \end{lemma}
 
   \begin{definition}
-    Let $\bepsilon$ be the signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k\neq\ell$ (resp. $k=\ell$).
-    \sayPT{$k\ne\ell$ means the same but looks better to me}
-    \saySS{Same here; now it is fixed}
+    Let $\bepsilon$ be the signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k<\ell$.
+\sayPT{$k\ne\ell$ means the same but looks better to me}
     We call any $\bepsilon$-$\fsl_2$-tiling an \emph{$\fsl_2$-tiling} (resp. \emph{anti-$\fsl_2$-tiling}) of $\ZZ^n$.
     \saySS{Do you have good name for these two matrices?}
   \end{definition}
 
   \begin{lemma}\label{le:constant slices}
-    Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is either an $\fsl_2$-tiling or an anti-$\fsl_2$-tiling of $\ZZ^n$.
+    \sayLD{add something like: Suppose that $n \geq 3$.} Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is either an $\fsl_2$-tiling or an anti-$\fsl_2$-tiling of $\ZZ^n$.
     Then for any $r\in\ZZ$ the set $\{a_{\bi}: \sum_{j=1}^n i_j=r\}$ consists of a single element.
   \end{lemma}
   \begin{proof}
@@ -192,7 +188,7 @@ Paris-Saclay, 91405 Orsay, France.}
       \quad\quad 
       a_{\bi+\be_j+\be_\ell}=\frac{xz-\epsilon}{a}.
     \]
-    Then applying \eqref{eq:higher sl2 recursion} three more times gives
+    Then applying \eqref{eq:higher sl2 recursion} three more times gives \sayLD{Replace all $\be_2$ by $\be_k$.}
     \begin{align*}
       a_{\bi+\be_j+\be_k+\be_\ell}
       &= \frac{a_{\bi+\be_j+\be_2}a_{\bi+\be_j+\be_\ell}-\epsilon}{a_{\bi+\be_j}}=\frac{xyz}{a^2}-\epsilon\frac{y+z}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2x};\\
@@ -207,13 +203,13 @@ Paris-Saclay, 91405 Orsay, France.}
 
   We now come to our first main result: in dimension $n$, an ``infinite staircase'' of $1$'s yields the only possible anti-$\fsl_2$-tiling.
 
-  \begin{theorem}
+  \begin{theorem} \label{thm:antitiling} \sayLD{For $n \geq 3$, \dots}
     There exists a unique (up to translation) anti-$\fsl_2$-tiling of $\ZZ^n$. 
     Any of its ``two dimensional slices'' obtained by fixing all but two of the coordinates of $\bi$ is the unique anti-$\fsl_2$-tiling of $\ZZ^2$.
     In particular all the integers appearing are odd Fibonacci numbers.
     \saySS{Maybe phrasing here could be improved}
     \sayPT{In view of Theorem 3, ``the unique anti-$\fsl_2$-tiling of $\ZZ^2$'' looks a bit weird. It supposed to be the one with a staircase of 1's, right?}
-    \saySS{Yes, that's the one I meant. How do we fix this?}
+    \sayLD{I propose to replace \emph{unique \dots} by \emph{staircase anti-$\fsl_2$-tiling} and we say before what it is}
   \end{theorem}  
   \begin{proof}
     Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is a anti-$\fsl_2$-tiling of $\ZZ^n$.  
@@ -225,8 +221,7 @@ Paris-Saclay, 91405 Orsay, France.}
     where we applied Lemma~\ref{le:constant slices} in the last equality.
     If $a_{\bi}>1$, this implies $a_{\bi+\be_1}<a_{\bi}$ or $a_{\bi-\be_2}<a_{\bi}$, contradicting minimality, so we must have $a_{\bi}=1$.
     This implies $\{a_{\bi+\be_k},a_{\bi-\be_k}\}=\{1,2\}$.
-    \sayPT{Shouldn't this be $\{a_{\bi+\be_k},a_{\bi-\be_\ell}\}=\{1,2\}$, or it is essentially the same?}
-    \saySS{I think they are the same: because of lemma 8 $a_{\bi-\be_\ell}$ should be the same as $a_{\bi-\be_k}$; am I right?}
+\sayPT{Shouldn't this be $\{a_{\bi+\be_k},a_{\bi-\be_\ell}\}=\{1,2\}$, or it is essentially the same?} \sayLD{I propose to make it clearer to add before the sentence something like ``As $a_{\bi + \be_k}$ is independent of $k$, it implies for all $k$, \dots''}
     Without loss of generality we will assume $a_{\bi+\be_k}=2$ and $\sum_{j=1}^n i_j=1$.
     Then applying \eqref{eq:higher sl2 recursion} repeatedly shows that $a_{\bi'}$ with $\sum_{j=1}^n i'_j=r\ge1$ is exactly the $r^{th}$ odd Fibonacci number $F_{2r-1}$ (see Example~\ref{ex:Fibonacci}).
     Similarly one sees that $a_{\bi'}$ with $\sum_{j=1}^n i'_j =r\le0$ is the odd Fibonacci number $F_{-2r+1}$.
@@ -250,7 +245,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \begin{corollary}\label{co:n=3}
     For $n=3$, there are precisely $4$ matrices $\bepsilon$ for which there exists an $\bepsilon$-$\fsl_2$-tiling. 
     For such $\bepsilon$ this $\bepsilon$-$\fsl_2$-tiling is unique (up to translation).
-    Moreover, if an $\bepsilon$-$\fsl_2$-tiling exists then $\epsilon_{12}\epsilon_{13}\epsilon_{23}=-1$.
+    Moreover, if an $\bepsilon$-$\fsl_2$-tiling exists then $\epsilon_{12}\epsilon_{13}\epsilon_{23}=-1$.\sayLD{I propose to replace the last sentence by something like ``More precisely, an $\bepsilon$-$\fsl_2$-tiling exists if and only if $\epsilon_{12}\epsilon_{13}\epsilon_{23}=-1$'', or to change the phrasing to make appear the equivalence (it seems more interesting for me than the number)}
   \end{corollary}
   \begin{proof}
     The claim follows immediately from the observation that any signature matrix for $n=3$ either is one of the two satisfying $\epsilon_{12}=\epsilon_{13}=\epsilon_{23}$ or is obtained from one of these with a single application of Lemma~\ref{le:flip}.
@@ -262,7 +257,7 @@ Paris-Saclay, 91405 Orsay, France.}
     They are all the signature matrices obtainable from the one yielding the anti-$\fsl_2$-tiling by repeated application of Lemma~\ref{le:flip}.
     Whenever an $\bepsilon$-$\fsl_2$-tiling exists it is unique up to translation.
   \end{theorem}
-  \begin{proof}
+  \begin{proof} \sayLD{proof can be shortened (see after)}
     We will proceed by induction on $n$. 
     The base case, $n=3$, is the content of Corollary~\ref{co:n=3}.
     Observe that, if $(a_{\bi})_{\bi\in\ZZ^n}$ is an $\bepsilon$-$\fsl_2$-tiling of $\ZZ^n$, then all its slices $(a_{\bi})_{\bi\in\ZZ^n,i_n=r}$ are tilings of $\ZZ^{n-1}$.
@@ -291,10 +286,14 @@ Paris-Saclay, 91405 Orsay, France.}
     \]
     for every $j,k\in[1,n]$ and that applying Lemma~\ref{le:flip} with $n$ distinct choices of $r$ fixes $\bepsilon$.
   \end{proof}
+  \begin{proof}[Shorter proof]
+   By Corollary \ref{co:n=3}, we get an inclusion $E \subset E'$ where $E$ is the set of signature matrices which admit a $\bepsilon$-$\fsl_2$-tiling and $E'$ is the set of signature matrices $\bepsilon$ satisfying $\bepsilon_{jk} \bepsilon_{k\ell} \bepsilon_{j\ell} = -1$ for any triple of indices $1 \leq j < k < \ell \leq n$. It is immediate that the restriction to any column (or row) gives a bijection from $E'$ to $\{\pm 1\}^{n-1}$. Using Lemma \ref{le:flip}, $(\ZZ/2\ZZ)^{n-1}$ acts on $E$ by $\bepsilon \mapsto \bepsilon^{(r)}$ for $1 \leq r \leq n-1$. By restricting the action to the last column of signature matrices, this action it free. Thanks to Theorem \ref{thm:antitiling}, $E$ is not empty so $\#E \geq 2^{n-1} = \# E' \geq \#E$ so $E = E'$. The unicity up to translation comes from restriction to triple of indices also.
+  \end{proof}
+
   
   \begin{remark}
     It is now clear why we choose the diagonal entries of $\bepsilon$ to be equal to $1$: any $\bepsilon$-$\fsl_2$-tiling consists of odd Fibonacci numbers and each 1-dimensional slice satisfies \eqref{eq:higher sl2 recursion} with $k=\ell$.
-  \end{remark}
+  \end{remark} \sayLD{We could also remark that $2^{n-1}$ is the number of possible orientation of a $n$-staircase.}
 
 \section*{Acknowledgements}
   These results were obtained while we were taking part in the Conference on Cluster Algebras and Representation Theory at the KIAS in Seoul, South Korea. 
