@@ -23,7 +23,7 @@
 \newcommand{\bepsilon}{\boldsymbol{\epsilon}}
 \newcommand{\be}{\boldsymbol{e}}
 \newcommand{\bi}{\boldsymbol{i}}
-\newcommand{\fsl}{\mathfrak{sl}}
+\newcommand{\SL}{\operatorname{SL}}
 \newcommand{\ZZ}{\mathbb{Z}}
 
 \author[Demonet]{Laurent Demonet}
@@ -48,44 +48,44 @@ Paris-Saclay, 91405 Orsay, France.}
 \email{pavel.tumarkin@durham.ac.uk}
 
 
-\title{$\fsl_2$-Tilings Do Not Exist in Higher Dimensions (mostly)}
+\title{$\SL_2$-Tilings Do Not Exist in Higher Dimensions (mostly)}
 
 \begin{document}
 \begin{abstract}
-  We show that there exists essentially a unique $\bepsilon$-$\fsl_2$-tiling, the anti-$\fsl_2$-tiling, and no $\fsl_2$-tilings in dimension bigger or equal to 3.
+  We show that there exists essentially a unique $\bepsilon$-$\SL_2$-tiling, the anti-$\SL_2$-tiling, and no $\SL_2$-tilings in dimension bigger or equal to 3.
 \end{abstract}
 \maketitle
 
-\section{$\fsl_2$-Tilings of the Plane}
+\section{$\SL_2$-Tilings of the Plane}
   The aim of this note is to study higher-dimensional analogues of the following object.
   \begin{definition}[\cite{AssemReutenauerSmith}]
-    A bi-infinite array $(a_{ij})_{i,j\in\ZZ}$ with $a_{ij}\in\ZZ_{>0}$ is called an \emph{$\fsl_2$-tiling of $\ZZ^2$} if the entries satisfy the relation
+    A bi-infinite array $(a_{ij})_{i,j\in\ZZ}$ with $a_{ij}\in\ZZ_{>0}$ is called an \emph{$\SL_2$-tiling of $\ZZ^2$} if the entries satisfy the relation
     \begin{equation}\label{eq:sl2 recursion}
       a_{i,j+1}a_{i+1,j}-a_{ij}a_{i+1,j+1}=1.
     \end{equation}
-    A bi-infinite array $(b_{ij})_{i,j\in\ZZ}$ with $b_{ij}\in\ZZ_{>0}$  is called an \emph{anti-$\fsl_2$-tiling of $\ZZ^2$} if the entries satisfy the relation
+    A bi-infinite array $(b_{ij})_{i,j\in\ZZ}$ with $b_{ij}\in\ZZ_{>0}$  is called an \emph{anti-$\SL_2$-tiling of $\ZZ^2$} if the entries satisfy the relation
     \begin{equation}\label{eq:anti-sl2 recursion}
       b_{i,j+1}b_{i+1,j}-b_{ij}b_{i+1,j+1}=-1.
     \end{equation}
   \end{definition}
-  The notion of an anti-$\fsl_2$-tiling is not actually giving anything new as shown by the following lemma, however this notion will be useful for our considerations in higher dimensions.
+  The notion of an anti-$\SL_2$-tiling is not actually giving anything new as shown by the following lemma, however this notion will be useful for our considerations in higher dimensions.
   \begin{lemma}
-    If $(a_{ij})_{i,j\in\ZZ}$ is an $\fsl_2$-tiling, then taking $b_{ij}=a_{i,-j}$ gives an anti-$\fsl_2$-tiling.
+    If $(a_{ij})_{i,j\in\ZZ}$ is an $\SL_2$-tiling, then taking $b_{ij}=a_{i,-j}$ gives an anti-$\SL_2$-tiling.
   \end{lemma}
-  One should think of the difference between $\fsl_2$-tilings and anti-$\fsl_2$-tilings as viewing the lattice $\ZZ^2$ ``from above'' or ``from below.''
+  One should think of the difference between $\SL_2$-tilings and anti-$\SL_2$-tilings as viewing the lattice $\ZZ^2$ ``from above'' or ``from below.''
 
   The following result from \cite{AssemReutenauerSmith} was our starting point.
   \begin{theorem}[\cite{AssemReutenauerSmith}]
-    There exist infinitely many $\fsl_2$-tilings of $\ZZ^2$.
+    There exist infinitely many $\SL_2$-tilings of $\ZZ^2$.
   \end{theorem}
 
-  In fact, it is shown in \cite{AssemReutenauerSmith} that any ``frontier'', or broken line of $1$'s in the plane, can be completed into a unique $\fsl_2$-tiling.
-  An interpretation of all possible $\fsl_2$-tilings involving triangulations of a polygon with infinitely many vertices was later given in \cite{HolmJorgensen}.
+  In fact, it is shown in \cite{AssemReutenauerSmith} that any ``frontier'', or broken line of $1$'s in the plane, can be completed into a unique $\SL_2$-tiling.
+  An interpretation of all possible $\SL_2$-tilings involving triangulations of a polygon with infinitely many vertices was later given in \cite{HolmJorgensen}.
 
-  The following anti-$\fsl_2$-tiling will be relevant in our higher dimensional analysis.
-  We will call it the \emph{staircase} anti-$\fsl_2$-tiling of $\ZZ^2$.
+  The following anti-$\SL_2$-tiling will be relevant in our higher dimensional analysis.
+  We will call it the \emph{staircase} anti-$\SL_2$-tiling of $\ZZ^2$.
   \begin{example}\label{ex:Fibonacci}
-    Consider the anti-$\fsl_2$-tiling $(a_{ij})_{i,j\in\ZZ}$ of $\ZZ^2$ with $a_{ij}=1$ if $i+j\in\{0,1\}$.  
+    Consider the anti-$\SL_2$-tiling $(a_{ij})_{i,j\in\ZZ}$ of $\ZZ^2$ with $a_{ij}=1$ if $i+j\in\{0,1\}$.  
     Using \eqref{eq:anti-sl2 recursion} and the well-known recursion $F_{2r-1}F_{2r+3}=F_{2r+1}^2+1$ $(r\ge1)$ for the odd Fibonacci numbers, it is easy to see that
       \[
         a_{ij}
@@ -118,33 +118,33 @@ Paris-Saclay, 91405 Orsay, France.}
       \end{center}
     \end{example}
 
-\section{$\fsl_2$-Tilings in Higher Dimensions}
+\section{$\SL_2$-Tilings in Higher Dimensions}
   Denote integer vectors by $\bi=(i_1\dots,i_n)$ and by $\be_k$ the $k$-th unit vector.
   A \emph{signature matrix} is a symmetric $n\times n$ matrix $\bepsilon=(\epsilon_{k\ell})$ with $\epsilon_{k\ell}=\pm 1$ whenever $k\neq \ell$ and $\epsilon_{kk}=-1$. 
   \begin{definition}
     Fix a signature matrix $\bepsilon$.  
-    An array $(a_{\bi})_{\bi\in\ZZ^n}$ with $a_{\bi}\in\ZZ_{>0}$ is called an \emph{$\bepsilon-\fsl_2$-tiling of $\ZZ^n$} if for each $k \neq\ell$ we have
+    An array $(a_{\bi})_{\bi\in\ZZ^n}$ with $a_{\bi}\in\ZZ_{>0}$ is called an \emph{$\bepsilon-\SL_2$-tiling of $\ZZ^n$} if for each $k \neq\ell$ we have
     \begin{equation}\label{eq:higher sl2 recursion}
       a_{\bi+\be_\ell}a_{\bi+\be_k}-a_{\bi}a_{\bi+\be_k+\be_\ell}=\epsilon_{k\ell}.
     \end{equation}
   \end{definition}
   The requirement on the diagonal entries of signature matrices might seem arbitrary right now because they do not play any role in the above definition; we will see later on that it is indeed a consistent choice.
   
-  The situation is now different than the $n=2$ case, all the $\bepsilon$-$\fsl_2$-tilings are not necessarily equivalent, however there do remain relations among them.
+  The situation is now different than the $n=2$ case, all the $\bepsilon$-$\SL_2$-tilings are not necessarily equivalent, however there do remain relations among them.
   \begin{lemma}\label{le:flip}
     Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}$ for the matrix obtained from $\bepsilon$ by first changing the sign of all the entries in row $r$ and then the sign of all entries in column $r$. 
     That is $\bepsilon^{(r)} =(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if exactly one of $k$ and $\ell$ equals $r$ and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise. 
     Clearly $\bepsilon^{(r)}$ is a signature matrix.
-    If $(a_{\bi})_{\bi\in\ZZ^n}$ is an $\bepsilon-\fsl_2$-tiling, then taking $b_{\bi}=a_{\bi-2i_r\be_r}$ gives an $\bepsilon^{(r)}-\fsl_2$-tiling.
+    If $(a_{\bi})_{\bi\in\ZZ^n}$ is an $\bepsilon-\SL_2$-tiling, then taking $b_{\bi}=a_{\bi-2i_r\be_r}$ gives an $\bepsilon^{(r)}-\SL_2$-tiling.
   \end{lemma}
 
   \begin{definition}
     Let $\bepsilon$ be the signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k\neq\ell$.
-    We call any $\bepsilon$-$\fsl_2$-tiling an \emph{$\fsl_2$-tiling} (resp. \emph{anti-$\fsl_2$-tiling}) of $\ZZ^n$.
+    We call any $\bepsilon$-$\SL_2$-tiling an \emph{$\SL_2$-tiling} (resp. \emph{anti-$\SL_2$-tiling}) of $\ZZ^n$.
   \end{definition}
 
   \begin{lemma}\label{le:constant slices}
-    Let $n\ge 3$ and assume $(a_{\bi})_{\bi\in\ZZ^n}$ is either an $\fsl_2$-tiling or an anti-$\fsl_2$-tiling of $\ZZ^n$.
+    Let $n\ge 3$ and assume $(a_{\bi})_{\bi\in\ZZ^n}$ is either an $\SL_2$-tiling or an anti-$\SL_2$-tiling of $\ZZ^n$.
     Then for any $r\in\ZZ$ the set $\{a_{\bi}: \sum_{j=1}^n i_j=r\}$ consists of a single element.
   \end{lemma}
   \begin{proof}
@@ -201,17 +201,17 @@ Paris-Saclay, 91405 Orsay, France.}
     The result follows by iterating on all possible triples of distinct indices.
   \end{proof}
 
-  We now come to our first main result: in dimension $n$, an ``infinite staircase'' of $1$'s yields the only possible anti-$\fsl_2$-tiling.
+  We now come to our first main result: in dimension $n$, an ``infinite staircase'' of $1$'s yields the only possible anti-$\SL_2$-tiling.
 
   \begin{theorem} 
     \label{thm:antitiling}
     Let $n\ge3$.
-    There exists a unique (up to translation) anti-$\fsl_2$-tiling of $\ZZ^n$. 
-    Any of its ``two dimensional slices'' obtained by fixing all but two of the coordinates of $\bi$ is a translation of the staircase anti-$\fsl_2$-tiling of $\ZZ^2$ from Example \ref{ex:Fibonacci}.
+    There exists a unique (up to translation) anti-$\SL_2$-tiling of $\ZZ^n$. 
+    Any of its ``two dimensional slices'' obtained by fixing all but two of the coordinates of $\bi$ is a translation of the staircase anti-$\SL_2$-tiling of $\ZZ^2$ from Example \ref{ex:Fibonacci}.
     In particular all the integers appearing are odd Fibonacci numbers.
   \end{theorem}  
   \begin{proof}
-    Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is a anti-$\fsl_2$-tiling of $\ZZ^n$.  
+    Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is a anti-$\SL_2$-tiling of $\ZZ^n$.  
     Pick $\bi$ with $a_{\bi}$ minimal.  
     Applying \eqref{eq:higher sl2 recursion} gives
     \[
@@ -226,11 +226,11 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{proof}
 
   \begin{proposition}\label{pr:nonexistence}
-    There does not exist any $\fsl_2$-tiling of $\ZZ^n$ for $n\geq3$.
+    There does not exist any $\SL_2$-tiling of $\ZZ^n$ for $n\geq3$.
   \end{proposition}
   \begin{proof}
-    It suffices to show that there is no $\fsl_2$-tiling of $\ZZ^3$.
-    Assume $(a_{\bi})_{\bi\in\ZZ^3}$ is an $\fsl_2$-tiling of $\ZZ^3$.
+    It suffices to show that there is no $\SL_2$-tiling of $\ZZ^3$.
+    Assume $(a_{\bi})_{\bi\in\ZZ^3}$ is an $\SL_2$-tiling of $\ZZ^3$.
     Pick $\bi$ with $a_{\bi}$ minimal.
     Applying \eqref{eq:higher sl2 recursion} gives
     \[
@@ -241,25 +241,25 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{proof}
 
   \begin{corollary}\label{co:n=3}
-    For $n=3$, there are precisely $4$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\fsl_2$-tiling. 
-    For such $\bepsilon$ this $\bepsilon$-$\fsl_2$-tiling is unique (up to translation).
-    More precisely, an $\bepsilon$-$\fsl_2$-tiling exists if and only if $\epsilon_{12}\epsilon_{13}\epsilon_{23}=-1$.
+    For $n=3$, there are precisely $4$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\SL_2$-tiling. 
+    For such $\bepsilon$ this $\bepsilon$-$\SL_2$-tiling is unique (up to translation).
+    More precisely, an $\bepsilon$-$\SL_2$-tiling exists if and only if $\epsilon_{12}\epsilon_{13}\epsilon_{23}=-1$.
   \end{corollary}
   \begin{proof}
     The claim follows immediately from the observation that any signature matrix for $n=3$ either is one of the two satisfying $\epsilon_{12}=\epsilon_{13}=\epsilon_{23}$ or is obtained from one of these with a single application of Lemma~\ref{le:flip}.
   \end{proof}
 
-  We are finally ready to classify all $\bepsilon$-$\fsl_2$-tilings for any $n\geq3$.
+  We are finally ready to classify all $\bepsilon$-$\SL_2$-tilings for any $n\geq3$.
   \begin{theorem}
     \label{thm:classification}
-    There are precisely $2^{n-1}$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\fsl_2$-tiling of $\ZZ^n$ for $n\geq3$.
-    They are all the signature matrices obtainable from the one yielding the anti-$\fsl_2$-tiling by repeated application of Lemma~\ref{le:flip}.
-    Whenever an $\bepsilon$-$\fsl_2$-tiling exists it is unique up to translation.
+    There are precisely $2^{n-1}$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\SL_2$-tiling of $\ZZ^n$ for $n\geq3$.
+    They are all the signature matrices obtainable from the one yielding the anti-$\SL_2$-tiling by repeated application of Lemma~\ref{le:flip}.
+    Whenever an $\bepsilon$-$\SL_2$-tiling exists it is unique up to translation.
   \end{theorem}
   \begin{proof}
-    Let $(a_{\bi})_{\bi\in\ZZ^n}$ be an $\bepsilon$-$\fsl_2$-tiling of $\ZZ^n$. 
+    Let $(a_{\bi})_{\bi\in\ZZ^n}$ be an $\bepsilon$-$\SL_2$-tiling of $\ZZ^n$. 
     Fixing all but any three distinct coordinates  $j,k,\ell$ of $\bi$, gives a tiling of $\ZZ^3$.
-    Therefore, by Corollary \ref{co:n=3}, we have an inclusion $E \subset E'$ where $E$ is the set of $n\times n$ signature matrices which admit an $\bepsilon$-$\fsl_2$-tiling and $E'$ is the set of $n\times n$ signature matrices $\bepsilon$ satisfying $\bepsilon_{jk} \bepsilon_{k\ell} \bepsilon_{j\ell} = -1$ for any triple of distinct indices.
+    Therefore, by Corollary \ref{co:n=3}, we have an inclusion $E \subset E'$ where $E$ is the set of $n\times n$ signature matrices which admit an $\bepsilon$-$\SL_2$-tiling and $E'$ is the set of $n\times n$ signature matrices $\bepsilon$ satisfying $\bepsilon_{jk} \bepsilon_{k\ell} \bepsilon_{j\ell} = -1$ for any triple of distinct indices.
 
     Any row (or equivalently any column) of a matrix $\bepsilon$ in $E'$ determines uniquely all the remaining entries of $\bepsilon$ therefore $E'$ is in bijection with $\{\pm 1\}^{n-1}$ and $\#E'= 2^{n-1}$.
 
@@ -274,16 +274,18 @@ Paris-Saclay, 91405 Orsay, France.}
   Note that the claim of Theorem \ref{thm:classification} could be rephrased by saying that, up to fixing the origin and choosing the orientation of each of the coordinate axes, there is a unique tiling of $\ZZ^n$ for $n\ge3$.
   
   \begin{remark}
-    It is now clear why we choose the diagonal entries of $\bepsilon$ to be equal to $-1$: any $\bepsilon$-$\fsl_2$-tiling consists of odd Fibonacci numbers and \eqref{eq:higher sl2 recursion} is satisfied also for $k=\ell$.
+    It is now clear why we choose the diagonal entries of $\bepsilon$ to be equal to $-1$: any $\bepsilon$-$\SL_2$-tiling consists of odd Fibonacci numbers and \eqref{eq:higher sl2 recursion} is satisfied also for $k=\ell$.
   \end{remark} 
 
 \section*{Acknowledgements}
   These results were obtained while we were taking part in the Conference on Cluster Algebras and Representation Theory at the KIAS in Seoul, South Korea. 
   We would like to thank the organizers of that meeting for the stimulating environment they provided.
+  
+  We are especially grateful to Peter J\o rgensen for his very inspiring talk at the same conference: the results presented here are content of the exciting discussion he sparked.
 
 \begin{thebibliography}{99}
-  \bibitem{AssemReutenauerSmith} Ibrahim Assem, Christophe Reutenauer and David Smith, \emph{Friezes}, Advances in Mathematics {\bf 225} (2010) 3134-3165.
-  \bibitem{HolmJorgensen} Thorsten Holm and Peter J\o rgensen, \emph{To appear?}.
+  \bibitem{AssemReutenauerSmith} Ibrahim Assem, Christophe Reutenauer and David Smith, \emph{Friezes}, Advances in Mathematics {\bf 225} (2010), 3134-3165.
+  \bibitem{HolmJorgensen} Thorsten Holm and Peter J\o rgensen, \emph{$\SL_2$-tilings and triangulations of the strip}, J. Combin. Theory {\bf Ser. A 120} (2013), 1817-1834
 \end{thebibliography}
 
 \end{document}
