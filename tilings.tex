@@ -52,7 +52,9 @@ Paris-Saclay, 91405 Orsay, France.}
 
 \begin{document}
 \begin{abstract}
-  We show that there exists essentially a unique $\bepsilon$-$\SL_2$-tiling, the anti-$\SL_2$-tiling, and no $\SL_2$-tilings in dimension bigger or equal to 3.
+  We define a family of generalizations of $\SL_2$-tilings to higher dimensions called $\bepsilon$-$\SL_2$-tilings.  
+  We show that, in each dimension 3 or greater, $\bepsilon$-$\SL_2$-tilings exist only for certain choices of $\bepsilon$.  
+  In the case that they exist, we show that they are essentially unique and have a concrete description in terms of odd Fibonacci numbers.
 \end{abstract}
 \maketitle
 
@@ -72,15 +74,14 @@ Paris-Saclay, 91405 Orsay, France.}
   \begin{lemma}
     If $(a_{ij})_{i,j\in\ZZ}$ is an $\SL_2$-tiling, then taking $b_{ij}=a_{i,-j}$ gives an anti-$\SL_2$-tiling.
   \end{lemma}
-  One should think of the difference between $\SL_2$-tilings and anti-$\SL_2$-tilings as viewing the lattice $\ZZ^2$ ``from above'' or ``from below.''
-
+  One should think of the difference between $\SL_2$-tilings and anti-$\SL_2$-tilings as viewing the lattice $\ZZ^2$ ``from above'' or ``from below.''  
   The following result from \cite{AssemReutenauerSmith} was our starting point.
   \begin{theorem}[\cite{AssemReutenauerSmith}]
     There exist infinitely many $\SL_2$-tilings of $\ZZ^2$.
   \end{theorem}
 
-  In fact, it is shown in \cite{AssemReutenauerSmith} that any ``frontier'', or broken line of $1$'s in the plane, can be completed into a unique $\SL_2$-tiling.
-  An interpretation of all possible $\SL_2$-tilings involving triangulations of a polygon with infinitely many vertices was later given in \cite{HolmJorgensen}.
+  In fact, it is shown in \cite{AssemReutenauerSmith} that any admissible frontier of $1$'s in the lattice, can be completed into a unique $\SL_2$-tiling.  
+  An interpretation of all possible $\SL_2$-tilings was later given in \cite{HolmJorgensen} in terms of triangulations of a polygon with infinitely many vertices.
 
   The following anti-$\SL_2$-tiling will be relevant in our higher dimensional analysis.
   We will call it the \emph{staircase} anti-$\SL_2$-tiling of $\ZZ^2$.
@@ -102,7 +103,7 @@ Paris-Saclay, 91405 Orsay, France.}
           \hline 1 & 1 & 2 & 3 & 5 & 8 & 13 & $\cdots$
         \end{tabular}
       \]
-      The following figure is a section of this tiling. 
+      The following figure is a portion of this tiling. 
       Note the bolded frontier of $1$'s; it is an ``infinite staircase''.
       \begin{center}
         \begin{tikzpicture}
@@ -132,15 +133,14 @@ Paris-Saclay, 91405 Orsay, France.}
   
   The situation is now different than the $n=2$ case, all the $\bepsilon$-$\SL_2$-tilings are not necessarily equivalent, however there do remain relations among them.
   \begin{lemma}\label{le:flip}
-    Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}$ for the matrix obtained from $\bepsilon$ by first changing the sign of all the entries in row $r$ and then the sign of all entries in column $r$. 
-    That is $\bepsilon^{(r)} =(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if exactly one of $k$ and $\ell$ equals $r$ and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise. 
-    Clearly $\bepsilon^{(r)}$ is a signature matrix.
+    Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}$ for the matrix obtained from $\bepsilon$ by changing the sign of all the entries in row $r$ and column $r$, leaving the diagonal entries fixed. 
+    That is, $\bepsilon^{(r)} =(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if exactly one of $k$ and $\ell$ equals $r$ and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise. 
     If $(a_{\bi})_{\bi\in\ZZ^n}$ is an $\bepsilon-\SL_2$-tiling, then taking $b_{\bi}=a_{\bi-2i_r\be_r}$ gives an $\bepsilon^{(r)}-\SL_2$-tiling.
   \end{lemma}
 
   \begin{definition}
-    Let $\bepsilon$ be the signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k\neq\ell$.
-    We call any $\bepsilon$-$\SL_2$-tiling an \emph{$\SL_2$-tiling} (resp. \emph{anti-$\SL_2$-tiling}) of $\ZZ^n$.
+    If $\bepsilon$ is a signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k\neq\ell$,
+    we refer to an $\bepsilon$-$\SL_2$-tiling as an \emph{$\SL_2$-tiling} (resp. \emph{anti-$\SL_2$-tiling}) of $\ZZ^n$.
   \end{definition}
 
   \begin{lemma}\label{le:constant slices}
@@ -168,12 +168,12 @@ Paris-Saclay, 91405 Orsay, France.}
         \draw (0,0) -- ++(1.5,1)  node[above] {$z$} ;
         \draw (0,0) node[left] {$\frac{xz-\epsilon}{a}$} ;
         \draw (0,0) -- ++(0,-1.6) node[left] {$x$} ;
-        \draw [dotted] (1.5,1) -- ++(0,-1.6) node[above right] {$a$};
-        \draw [dotted] (0,-1.6) -- ++(1.5,1) ;
-        \draw (0,0) -- ++(1.5,-1) node[below right] {?} ;
+        \draw [dashed] (1.5,1) -- ++(0,-1.6) node[above right] {$a$};
+        \draw [dashed] (0,-1.6) -- ++(1.5,1) ;
+        \draw (0,0) -- ++(1.5,-1); %node[below right] {?} ;
         \draw (1.5,1) -- ++(1.5,-1) node[right] {$\frac{yz-\epsilon}{a}$};
         \draw (0,-1.6) -- ++(1.5,-1) node[below]{$\frac{xy-\epsilon}{a}$};
-        \draw [dotted] (1.5,-.6) -- ++(1.5,-1);
+        \draw [dashed] (1.5,-.6) -- ++(1.5,-1);
         \draw (1.5,-1) -- ++(0,-1.6) ;
         \draw (1.5,-1) -- ++(1.5,1) ;
         \draw (1.5,-2.6) -- ++(1.5,1) ;
@@ -189,26 +189,25 @@ Paris-Saclay, 91405 Orsay, France.}
       a_{\bi+\be_j+\be_\ell}=\frac{xz-\epsilon}{a}.
     \]
     Then applying \eqref{eq:higher sl2 recursion} three more times gives 
-    \begin{align*}
-      a_{\bi+\be_j+\be_k+\be_\ell}
-      &= \frac{a_{\bi+\be_j+\be_k}a_{\bi+\be_j+\be_\ell}-\epsilon}{a_{\bi+\be_j}}=\frac{xyz}{a^2}-\epsilon\frac{y+z}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2x};\\
-      &= \frac{a_{\bi+\be_j+\be_k}a_{\bi+\be_k+\be_\ell}-\epsilon}{a_{\bi+\be_k}}=\frac{xyz}{a^2}-\epsilon\frac{x+z}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2y};\\
-      &= \frac{a_{\bi+\be_j+\be_\ell}a_{\bi+\be_k+\be_\ell}-\epsilon}{a_{\bi+\be_\ell}}=\frac{xyz}{a^2}-\epsilon\frac{x+y}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2z}.
-    \end{align*}
+    \begin{equation*}
+      a_{\bi+\be_j+\be_k+\be_\ell}=\left\{\begin{array}{l}
+        \frac{a_{\bi+\be_j+\be_k}a_{\bi+\be_j+\be_\ell}-\epsilon}{a_{\bi+\be_j}}=\frac{xyz}{a^2}-\epsilon\frac{y+z}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2x}\\
+        \frac{a_{\bi+\be_j+\be_k}a_{\bi+\be_k+\be_\ell}-\epsilon}{a_{\bi+\be_k}}=\frac{xyz}{a^2}-\epsilon\frac{x+z}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2y}\\
+        \frac{a_{\bi+\be_j+\be_\ell}a_{\bi+\be_k+\be_\ell}-\epsilon}{a_{\bi+\be_\ell}}=\frac{xyz}{a^2}-\epsilon\frac{x+y}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2z}\end{array}\right.
+    \end{equation*}
     It follows that $\frac{x-y}{a^2}=\frac{a^2-\epsilon}{a^2x}-\frac{a^2-\epsilon}{a^2y}$ or $(xy+a^2-\epsilon)(x-y)=0$.  
     But $xy+a^2-\epsilon\ge1$ since $a,x,y\ge1$, hence $x=y$.  
     Similarly $y=z$.
-    The result follows by iterating on all possible triples of distinct indices.
+    The result then follows by iterating on all possible triples of distinct indices.
   \end{proof}
 
   We now come to our first main result: in dimension $n$, an ``infinite staircase'' of $1$'s yields the only possible anti-$\SL_2$-tiling.
 
   \begin{theorem} 
     \label{thm:antitiling}
-    Let $n\ge3$.
-    There exists a unique (up to translation) anti-$\SL_2$-tiling of $\ZZ^n$. 
+    For $n\ge3$, there exists a unique (up to translation) anti-$\SL_2$-tiling of $\ZZ^n$. 
     Any of its ``two dimensional slices'' obtained by fixing all but two of the coordinates of $\bi$ is a translation of the staircase anti-$\SL_2$-tiling of $\ZZ^2$ from Example \ref{ex:Fibonacci}.
-    In particular all the integers appearing are odd Fibonacci numbers.
+    In particular, all the integers appearing are odd Fibonacci numbers.
   \end{theorem}  
   \begin{proof}
     Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is a anti-$\SL_2$-tiling of $\ZZ^n$.  
@@ -242,32 +241,32 @@ Paris-Saclay, 91405 Orsay, France.}
 
   \begin{corollary}\label{co:n=3}
     For $n=3$, there are precisely $4$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\SL_2$-tiling. 
-    For such $\bepsilon$ this $\bepsilon$-$\SL_2$-tiling is unique (up to translation).
+    For such $\bepsilon$, this $\bepsilon$-$\SL_2$-tiling is unique (up to translation).
     More precisely, an $\bepsilon$-$\SL_2$-tiling exists if and only if $\epsilon_{12}\epsilon_{13}\epsilon_{23}=-1$.
   \end{corollary}
   \begin{proof}
-    The claim follows immediately from the observation that any signature matrix for $n=3$ either is one of the two satisfying $\epsilon_{12}=\epsilon_{13}=\epsilon_{23}$ or is obtained from one of these with a single application of Lemma~\ref{le:flip}.
+    The claim follows immediately from the observation that any signature matrix for $n=3$ is either one of the two satisfying $\epsilon_{12}=\epsilon_{13}=\epsilon_{23}$ or is obtained from one of these with a single application of Lemma~\ref{le:flip}.
   \end{proof}
 
   We are finally ready to classify all $\bepsilon$-$\SL_2$-tilings for any $n\geq3$.
   \begin{theorem}
     \label{thm:classification}
-    There are precisely $2^{n-1}$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\SL_2$-tiling of $\ZZ^n$ for $n\geq3$.
-    They are all the signature matrices obtainable from the one yielding the anti-$\SL_2$-tiling by repeated application of Lemma~\ref{le:flip}.
-    Whenever an $\bepsilon$-$\SL_2$-tiling exists it is unique up to translation.
+    For $n\geq3$, there are precisely $2^{n-1}$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\SL_2$-tiling of $\ZZ^n$.
+    They are precisely the signature matrices obtainable from the anti-$\SL_2$-signature matrix by repeated application of Lemma~\ref{le:flip}.
+    Whenever an $\bepsilon$-$\SL_2$-tiling exists, it is unique up to translation.
   \end{theorem}
   \begin{proof}
     Let $(a_{\bi})_{\bi\in\ZZ^n}$ be an $\bepsilon$-$\SL_2$-tiling of $\ZZ^n$. 
-    Fixing all but any three distinct coordinates  $j,k,\ell$ of $\bi$, gives a tiling of $\ZZ^3$.
-    Therefore, by Corollary \ref{co:n=3}, we have an inclusion $E \subset E'$ where $E$ is the set of $n\times n$ signature matrices which admit an $\bepsilon$-$\SL_2$-tiling and $E'$ is the set of $n\times n$ signature matrices $\bepsilon$ satisfying $\bepsilon_{jk} \bepsilon_{k\ell} \bepsilon_{j\ell} = -1$ for any triple of distinct indices.
+    Fixing all but any three distinct entries of $\bi$ gives a tiling of $\ZZ^3$.
+    Therefore, it follows from Corollary \ref{co:n=3} that we have an inclusion $E \subset E'$, where $E$ is the set of $n\times n$ signature matrices $\bepsilon$ which admit an $\bepsilon$-$\SL_2$-tiling, and $E'$ is the set of $n\times n$ signature matrices $\bepsilon$ satisfying $\epsilon_{jk} \epsilon_{k\ell} \epsilon_{j\ell} = -1$ for any triple of distinct indices $j,k,\ell$.
 
-    Any row (or equivalently any column) of a matrix $\bepsilon$ in $E'$ determines uniquely all the remaining entries of $\bepsilon$ therefore $E'$ is in bijection with $\{\pm 1\}^{n-1}$ and $\#E'= 2^{n-1}$.
+    Any row (or equivalently any column) of a matrix $\bepsilon$ in $E'$ determines uniquely all the remaining entries of $\bepsilon$, therefore $E'$ is in bijection with $\{\pm 1\}^{n-1}$ and $\#E'= 2^{n-1}$.
 
-    Using Lemma \ref{le:flip}, $(\ZZ/2\ZZ)^{n-1}$ acts on $E$ by $\bepsilon \mapsto \bepsilon^{(r)}$ for $1 \leq r \leq n-1$. 
+    Using Lemma \ref{le:flip}, there is an action of $(\ZZ/2\ZZ)^{n-1}$ on $E$ given by $\bepsilon \mapsto \bepsilon^{(r)}$ for $1 \leq r \leq n-1$. 
     This action is free; indeed the only element of $(\ZZ/2\ZZ)^{n-1}$ leaving invariant the last column of any given matrix of $E$ is the identity. 
-    Thanks to Theorem \ref{thm:antitiling}, $E$ is not empty so we compute $\#E \geq 2^{n-1} = \# E' \geq \#E$ and deduce that $E = E'$.
+    Thanks to Theorem \ref{thm:antitiling}, $E$ is not empty and so we compute $\#E \geq 2^{n-1} = \# E' \geq \#E$ and deduce that $E = E'$.
 
-    The uniqueness claim also follow immediately from Corollary \ref{co:n=3} by fixing all but any three distinct coordinates  $j,k,\ell$ of $\bi$.
+    The uniqueness claim also follows immediately from Corollary \ref{co:n=3} by fixing all but any three distinct entries of $\bi$.
 
   \end{proof}
 
@@ -285,7 +284,7 @@ Paris-Saclay, 91405 Orsay, France.}
 
 \begin{thebibliography}{99}
   \bibitem{AssemReutenauerSmith} Ibrahim Assem, Christophe Reutenauer and David Smith, \emph{Friezes}, Advances in Mathematics {\bf 225} (2010), 3134-3165.
-  \bibitem{HolmJorgensen} Thorsten Holm and Peter J\o rgensen, \emph{$\SL_2$-tilings and triangulations of the strip}, J. Combin. Theory {\bf Ser. A 120} (2013), 1817-1834
+  \bibitem{HolmJorgensen} Thorsten Holm and Peter J\o rgensen, \emph{$\SL_2$-tilings and triangulations of the strip}, J. Combin. Theory Ser. A {\bf 120} (2013), 1817-1834.
 \end{thebibliography}
 
 \end{document}
