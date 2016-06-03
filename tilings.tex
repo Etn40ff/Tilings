@@ -1,47 +1,7 @@
-\documentclass[11pt,reqno]{amsart}
-%\setlength{\hoffset}{-.5in}
-\setlength{\voffset}{-.25in}
+\documentclass[12pt]{amsart}
 \usepackage{amsmath,amssymb,latexsym}
-\usepackage{graphicx}
-\usepackage{url}    %does nice formatting of URLs
+\usepackage[margin=1in, marginparwidth=0.8in]{geometry}
 \usepackage{tikz}
-
-\textwidth=6.175in
-\textheight=9.0in
-\headheight=13pt
-\calclayout
-
-\makeatletter
-\newcommand{\monthyear}[1]{%
-  \def\@monthyear{\uppercase{#1}}}
-%   \def\@monthyear{\uppercase{Month Year}}}
-\newcommand{\volnumber}[1]{%
-  \def\@volnumber{\uppercase{#1}}}
-%   \def\@volnumber{\uppercase{Volume , Number }}}
-\AtBeginDocument{%
-\def\ps@plain{\ps@empty
-  \def\@oddfoot{\@monthyear \hfil \thepage}%
-  \def\@evenfoot{\thepage \hfil \@volnumber}}
-\def\ps@firstpage{\ps@plain}
-\def\ps@headings{\ps@empty
-  \def\@evenhead{%
-    \setTrue{runhead}%
-    \def\thanks{\protect\thanks@warning}%
-    \uppercase{The Fibonacci Quarterly}\hfil}%
-  \def\@oddhead{%
-    \setTrue{runhead}%
-    \def\thanks{\protect\thanks@warning}%
-    \hfill\uppercase{$\SL_2$-Tilings}}%
-  \let\@mkboth\markboth
-  \def\@evenfoot{%
-    \thepage \hfil \@volnumber}%
-  \def\@oddfoot{%
-    \@monthyear \hfil \thepage}%
-  }%
-\footskip=25pt
-\pagestyle{headings}%
-}
-\makeatother
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}[theorem]{Definition}
@@ -58,10 +18,6 @@
 \newcommand{\ZZ}{\mathbb{Z}}
 
 \begin{document}
-%% replace the values in the next three lines by the correct information
-\monthyear{Month Year}
-\volnumber{Volume, Number}
-\setcounter{page}{1}
 
 \title{$\SL_2$-Tilings Do Not Exist in Higher Dimensions (mostly)}
 
@@ -112,7 +68,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \begin{lemma}
     If $(a_{ij})_{i,j\in\ZZ}$ is an $\SL_2$-tiling, then taking $b_{ij}=a_{i,-j}$ gives an anti-$\SL_2$-tiling.
   \end{lemma}
-  One should think of the difference between $\SL_2$-tilings and anti-$\SL_2$-tilings as viewing the lattice $\ZZ^2$ ``from above'' or ``from below.''  
+  One should think of the difference between $\SL_2$-tilings and anti-$\SL_2$-tilings as viewing the lattice $\ZZ^2$ ``from above'' or ``from below.''
   The following result from \cite{AssemReutenauerSmith} was our starting point.
   \begin{theorem}[\cite{AssemReutenauerSmith}]
     There exist infinitely many $\SL_2$-tilings of $\ZZ^2$.
@@ -177,8 +133,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{lemma}
 
   \begin{definition}
-    If $\bepsilon$ is a signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k\neq\ell$,
-    we refer to an $\bepsilon$-$\SL_2$-tiling as an \emph{$\SL_2$-tiling} (resp. \emph{anti-$\SL_2$-tiling}) of $\ZZ^n$.
+    If $\bepsilon$ is a signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k\neq\ell$, we refer to an $\bepsilon$-$\SL_2$-tiling as an \emph{$\SL_2$-tiling} (resp. \emph{anti-$\SL_2$-tiling}) of $\ZZ^n$.
   \end{definition}
 
   \begin{lemma}\label{le:constant slices}
@@ -208,7 +163,7 @@ Paris-Saclay, 91405 Orsay, France.}
         \draw (0,0) -- ++(0,-1.6) node[left] {$x$} ;
         \draw [dashed] (1.5,1) -- ++(0,-1.6) node[above right] {$a$};
         \draw [dashed] (0,-1.6) -- ++(1.5,1) ;
-        \draw (0,0) -- ++(1.5,-1); %node[below right] {?} ;
+        \draw (0,0) -- ++(1.5,-1);
         \draw (1.5,1) -- ++(1.5,-1) node[right] {$\frac{yz-\epsilon}{a}$};
         \draw (0,-1.6) -- ++(1.5,-1) node[below]{$\frac{xy-\epsilon}{a}$};
         \draw [dashed] (1.5,-.6) -- ++(1.5,-1);
@@ -228,10 +183,12 @@ Paris-Saclay, 91405 Orsay, France.}
     \]
     Then applying \eqref{eq:higher sl2 recursion} three more times gives 
     \begin{equation*}
-      a_{\bi+\be_j+\be_k+\be_\ell}=\left\{\begin{array}{l}
-        \frac{a_{\bi+\be_j+\be_k}a_{\bi+\be_j+\be_\ell}-\epsilon}{a_{\bi+\be_j}}=\frac{xyz}{a^2}-\epsilon\frac{y+z}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2x}\\
-        \frac{a_{\bi+\be_j+\be_k}a_{\bi+\be_k+\be_\ell}-\epsilon}{a_{\bi+\be_k}}=\frac{xyz}{a^2}-\epsilon\frac{x+z}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2y}\\
-        \frac{a_{\bi+\be_j+\be_\ell}a_{\bi+\be_k+\be_\ell}-\epsilon}{a_{\bi+\be_\ell}}=\frac{xyz}{a^2}-\epsilon\frac{x+y}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2z}\end{array}\right.
+      a_{\bi+\be_j+\be_k+\be_\ell}=\left\{
+        \begin{array}{l}
+          \frac{a_{\bi+\be_j+\be_k}a_{\bi+\be_j+\be_\ell}-\epsilon}{a_{\bi+\be_j}}=\frac{xyz}{a^2}-\epsilon\frac{y+z}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2x}\\
+          \frac{a_{\bi+\be_j+\be_k}a_{\bi+\be_k+\be_\ell}-\epsilon}{a_{\bi+\be_k}}=\frac{xyz}{a^2}-\epsilon\frac{x+z}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2y}\\
+          \frac{a_{\bi+\be_j+\be_\ell}a_{\bi+\be_k+\be_\ell}-\epsilon}{a_{\bi+\be_\ell}}=\frac{xyz}{a^2}-\epsilon\frac{x+y}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2z}
+        \end{array}\right.
     \end{equation*}
     It follows that $\frac{x-y}{a^2}=\frac{a^2-\epsilon}{a^2x}-\frac{a^2-\epsilon}{a^2y}$ or $(xy+a^2-\epsilon)(x-y)=0$.  
     But $xy+a^2-\epsilon\ge1$ since $a,x,y\ge1$, hence $x=y$.  
@@ -244,7 +201,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \begin{theorem} 
     \label{thm:antitiling}
     For $n\ge3$, there exists a unique (up to translation) anti-$\SL_2$-tiling of $\ZZ^n$. 
-    Any of its ``two dimensional slices'' obtained by fixing all but two of the coordinates of $\bi$ is a translation of the staircase anti-$\SL_2$-tiling of $\ZZ^2$ from Example \ref{ex:Fibonacci}.
+    Any of its ``two dimensional slices'' obtained by fixing all but two of the entries of $\bi$ is a translation of the staircase anti-$\SL_2$-tiling of $\ZZ^2$ from Example \ref{ex:Fibonacci}.
     In particular, all the integers appearing are odd Fibonacci numbers.
   \end{theorem}  
   \begin{proof}
@@ -324,9 +281,5 @@ Paris-Saclay, 91405 Orsay, France.}
   \bibitem{AssemReutenauerSmith} Ibrahim Assem, Christophe Reutenauer and David Smith, \emph{Friezes}, Advances in Mathematics {\bf 225} (2010), 3134-3165.
   \bibitem{BessenrodtHolmJorgensen} Christine Bessenrodt, Thorsten Holm and Peter Jorgensen, \emph{All $SL_2$-tilings come from infinite triangulations}, Preprint arXiv:1603.09103 (2016).
 \end{thebibliography}
-
-\medskip
-
-\noindent MSC2010: 05E15, 13F60
 
 \end{document}
