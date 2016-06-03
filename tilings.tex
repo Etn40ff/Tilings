@@ -1,16 +1,47 @@
-\documentclass{amsart}
+\documentclass[11pt,reqno]{amsart}
+%\setlength{\hoffset}{-.5in}
+\setlength{\voffset}{-.25in}
 \usepackage{amsmath,amssymb,latexsym}
-\usepackage[margin=1in, marginparwidth=0.8in]{geometry}
+\usepackage{graphicx}
+\usepackage{url}    %does nice formatting of URLs
 \usepackage{tikz}
 
-%%% discussion tools; remove this before publishing
-\usepackage[draft]{say}
-\newcommand{\sayDR}[1]{\say[DR]{#1}}
-\newcommand{\sayLD}[1]{\say[LD]{#1}}
-\newcommand{\sayPGP}[1]{\say[PGP]{#1}}
-\newcommand{\sayPT}[1]{\say[PT]{#1}}
-\newcommand{\saySS}[1]{\say[SS]{#1}}
-%%% end discussion tools
+\textwidth=6.175in
+\textheight=9.0in
+\headheight=13pt
+\calclayout
+
+\makeatletter
+\newcommand{\monthyear}[1]{%
+  \def\@monthyear{\uppercase{#1}}}
+%   \def\@monthyear{\uppercase{Month Year}}}
+\newcommand{\volnumber}[1]{%
+  \def\@volnumber{\uppercase{#1}}}
+%   \def\@volnumber{\uppercase{Volume , Number }}}
+\AtBeginDocument{%
+\def\ps@plain{\ps@empty
+  \def\@oddfoot{\@monthyear \hfil \thepage}%
+  \def\@evenfoot{\thepage \hfil \@volnumber}}
+\def\ps@firstpage{\ps@plain}
+\def\ps@headings{\ps@empty
+  \def\@evenhead{%
+    \setTrue{runhead}%
+    \def\thanks{\protect\thanks@warning}%
+    \uppercase{The Fibonacci Quarterly}\hfil}%
+  \def\@oddhead{%
+    \setTrue{runhead}%
+    \def\thanks{\protect\thanks@warning}%
+    \hfill\uppercase{$\SL_2$-Tilings}}%
+  \let\@mkboth\markboth
+  \def\@evenfoot{%
+    \thepage \hfil \@volnumber}%
+  \def\@oddfoot{%
+    \@monthyear \hfil \thepage}%
+  }%
+\footskip=25pt
+\pagestyle{headings}%
+}
+\makeatother
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}[theorem]{Definition}
@@ -26,14 +57,24 @@
 \newcommand{\SL}{\operatorname{SL}}
 \newcommand{\ZZ}{\mathbb{Z}}
 
+\begin{document}
+%% replace the values in the next three lines by the correct information
+\monthyear{Month Year}
+\volnumber{Volume, Number}
+\setcounter{page}{1}
+
+\title{$\SL_2$-Tilings Do Not Exist in Higher Dimensions (mostly)}
+
 \author[Demonet]{Laurent Demonet}
 \address[Laurent Demonet]{Graduate School of Mathematics, Nagoya University, Furocho, Chikusaku, 464-8602 Nagoya, Japan}
 \email{Laurent.Demonet@normalesup.org}
+\thanks{The first author was partially supported by JSPS Grant-in-Aid for Young Scientist (B) 26800008.}
 
 \author[Plamondon]{Pierre-Guy Plamondon}
 \address[Pierre-Guy Plamondon]{Laboratoire de Math\'ematiques d'Orsay, Univ. Paris-Sud, CNRS, Univ.
 Paris-Saclay, 91405 Orsay, France.}
 \email{pierre-guy.plamondon@math.u-psud.fr}
+\thanks{The second author was partially supported by the French ANR grant SC3A (ANR-15-CE40-0004-01).}
 
 \author[Rupel]{Dylan Rupel}
 \address[Dylan Rupel]{Department of Mathematics, University of Notre Dame, Notre Dame, Indiana 46556, USA.}
@@ -47,15 +88,12 @@ Paris-Saclay, 91405 Orsay, France.}
 \address[Pavel Tumarkin]{Department of Mathematical Sciences, Durham University, South Road, Durham, DH1 3LE, UK.}
 \email{pavel.tumarkin@durham.ac.uk}
 
-
-\title{$\SL_2$-Tilings Do Not Exist in Higher Dimensions (mostly)}
-
-\begin{document}
 \begin{abstract}
   We define a family of generalizations of $\SL_2$-tilings to higher dimensions called $\bepsilon$-$\SL_2$-tilings.  
   We show that, in each dimension 3 or greater, $\bepsilon$-$\SL_2$-tilings exist only for certain choices of $\bepsilon$.  
   In the case that they exist, we show that they are essentially unique and have a concrete description in terms of odd Fibonacci numbers.
 \end{abstract}
+
 \maketitle
 
 \section{$\SL_2$-Tilings of the Plane}
@@ -81,7 +119,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{theorem}
 
   In fact, it is shown in \cite{AssemReutenauerSmith} that any admissible frontier of $1$'s in the lattice, can be completed into a unique $\SL_2$-tiling.  
-  An interpretation of all possible $\SL_2$-tilings was later given in \cite{HolmJorgensen} in terms of triangulations of a polygon with infinitely many vertices.
+  An interpretation of all possible $\SL_2$-tilings was later given in \cite{BessenrodtHolmJorgensen} in terms of triangulations of a polygon with infinitely many vertices.
 
   The following anti-$\SL_2$-tiling will be relevant in our higher dimensional analysis.
   We will call it the \emph{staircase} anti-$\SL_2$-tiling of $\ZZ^2$.
@@ -284,7 +322,11 @@ Paris-Saclay, 91405 Orsay, France.}
 
 \begin{thebibliography}{99}
   \bibitem{AssemReutenauerSmith} Ibrahim Assem, Christophe Reutenauer and David Smith, \emph{Friezes}, Advances in Mathematics {\bf 225} (2010), 3134-3165.
-  \bibitem{HolmJorgensen} Thorsten Holm and Peter J\o rgensen, \emph{$\SL_2$-tilings and triangulations of the strip}, J. Combin. Theory Ser. A {\bf 120} (2013), 1817-1834.
+  \bibitem{BessenrodtHolmJorgensen} Christine Bessenrodt, Thorsten Holm and Peter Jorgensen, \emph{All $SL_2$-tilings come from infinite triangulations}, Preprint arXiv:1603.09103 (2016).
 \end{thebibliography}
+
+\medskip
+
+\noindent MSC2010: 05E15, 13F60
 
 \end{document}
