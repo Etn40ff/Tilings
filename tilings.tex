@@ -45,22 +45,25 @@ Paris-Saclay, 91405 Orsay, France.}
 \email{pavel.tumarkin@durham.ac.uk}
 
 \begin{abstract}
-  We define a family of generalizations of $\SL_2$-tilings to higher dimensions called $\bepsilon$-$\SL_2$-tilings.  
-  We show that, in each dimension 3 or greater, $\bepsilon$-$\SL_2$-tilings exist only for certain choices of $\bepsilon$.  
+  We define a family of generalizations of $\SL_2$-tilings to higher dimensions called $\bepsilon$-$\SL_2$-tilings.
+  We show that, in each dimension 3 or greater, $\bepsilon$-$\SL_2$-tilings exist only for certain choices of $\bepsilon$.
   In the case that they exist, we show that they are essentially unique and have a concrete description in terms of odd Fibonacci numbers.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
-  An $\SL_2$-tiling of the plane (see Definition \ref{defi::sl2plane}) is, loosely speaking, obtained by assigning a positive integer to each integral point of the plane in such a way that all the $2\times 2$ matrices formed by squares of adjacent entries have determinant $1$ (an $\SL_2$-tiling is illustrated in Example \ref{ex:Fibonacci}).  This definition was introduced by I.~Assem, C.~Reutenauer and D.~Smith in \cite{AssemReutenauerSmith}, and was used by these authors to obtain explicit formulas describing cluster variables in cluster algebras of type $A$.  $\SL_2$-tilings can also be viewed as $T$-systems of type $A_1$ (as in, for instance, \cite{DiFrancescoKedem}), where all variables are evaluated in positive integers.
-  
-  The fact that $\SL_2$-tilings of the plane even exist can be a little surprising in itself.  In fact, not only do they exist, but the work of C.~Bessenrodt, T.~Holm and P.~J{\o}rgensen \cite{BessenrodtHolmJorgensen} allows one to classify all such tilings, using triangulations of some suitable infinity-gon. 
-  
-  In this note, we introduce a higher-dimensional analogue of $\SL_2$-tilings: integers will be assigned to points in $\mathbb{Z}^n$, for $n\geq 2$, and $2\times 2$ matrices in every slice will be asked to satisfy a determinantal identity similar to the one above.
- 
+  An $\SL_2$-tiling of the plane (see Definition \ref{defi::sl2plane}) is, loosely speaking, obtained by assigning a positive integer to each integral point of the plane in such a way that all the $2\times 2$ matrices formed by squares of adjacent entries have determinant $1$.
+  This definition was introduced by I.~Assem, C.~Reutenauer and D.~Smith in \cite{AssemReutenauerSmith}, and was used by these authors to obtain explicit formulas describing cluster variables in cluster algebras of type $A$.
+  $\SL_2$-tilings can also be viewed as $T$-systems of type $A_1$ (as in, for instance, \cite{DiFrancescoKedem}), where all variables are evaluated in positive integers.
+
+  The fact that $\SL_2$-tilings of the plane even exist can be a little surprising in itself.
+  On the contrary, already in \cite{AssemReutenauerSmith} it was shown that there are infinitely many of them.
+  More recently C.~Bessenrodt, T.~Holm and P.~J{\o}rgensen \cite{BessenrodtHolmJorgensen} classified all such tilings using triangulations of some suitable infinity-gon.
+
+  In this note, we introduce a higher-dimensional analogue of $\SL_2$-tilings: integers will be assigned to points in $\mathbb{Z}^n$, for $n\geq 2$, and $2\times 2$ matrices of adjacent entries in every slice will be asked to satisfy a determinantal identity.
+
   Although our definition seems like a natural generalization of the notion of $\SL_2$-tilings, our main result (Theorem \ref{thm:classification}) states that, if $n\geq 3$, then the objects it defines almost never exist.
- 
 
 \section{$\SL_2$-Tilings of the Plane}
   The aim of this note is to study higher-dimensional analogues of the following object.
@@ -85,13 +88,13 @@ Paris-Saclay, 91405 Orsay, France.}
     There exist infinitely many $\SL_2$-tilings of $\ZZ^2$.
   \end{theorem}
 
-  In fact, it is shown in \cite{AssemReutenauerSmith} that any admissible frontier of $1$'s in the lattice, can be completed into a unique $\SL_2$-tiling.  
+  In fact, it is shown in \cite{AssemReutenauerSmith} that any admissible frontier of $1$'s in the lattice, can be completed into a unique $\SL_2$-tiling.
   An interpretation of all possible $\SL_2$-tilings was later given in \cite{BessenrodtHolmJorgensen} in terms of triangulations of a polygon with infinitely many vertices.
 
   The following anti-$\SL_2$-tiling will be relevant in our higher dimensional analysis.
   We will call it the \emph{staircase} anti-$\SL_2$-tiling of $\ZZ^2$.
   \begin{example}\label{ex:Fibonacci}
-    Consider the anti-$\SL_2$-tiling $(a_{ij})_{i,j\in\ZZ}$ of $\ZZ^2$ with $a_{ij}=1$ if $i+j\in\{0,1\}$.  
+    Consider the anti-$\SL_2$-tiling $(a_{ij})_{i,j\in\ZZ}$ of $\ZZ^2$ with $a_{ij}=1$ if $i+j\in\{0,1\}$.
     Using \eqref{eq:anti-sl2 recursion} and the well-known recursion $F_{2r-1}F_{2r+3}=F_{2r+1}^2+1$ $(r\ge1)$ for the odd Fibonacci numbers, it is easy to see that
       \[
         a_{ij}
@@ -103,12 +106,12 @@ Paris-Saclay, 91405 Orsay, France.}
       \]
       where we number the Fibonacci numbers as:
       \[
-        \begin{tabular}{|c|c|c|c|c|c|c|c} 
+        \begin{tabular}{|c|c|c|c|c|c|c|c}
           $F_1$ & $F_2$ & $F_3$ & $F_4$ & $F_5$ & $F_6$ & $F_7$ & $\cdots$\\
           \hline 1 & 1 & 2 & 3 & 5 & 8 & 13 & $\cdots$
         \end{tabular}
       \]
-      The following figure is a portion of this tiling. 
+      The following figure is a portion of this tiling.
       Note the bolded frontier of $1$'s; it is an ``infinite staircase''.
       \begin{center}
         \begin{tikzpicture}
@@ -126,18 +129,18 @@ Paris-Saclay, 91405 Orsay, France.}
 
 \section{$\SL_2$-Tilings in Higher Dimensions}
   For a fixed integer $n\geq 2$, denote vectors in $\ZZ^n$ by $\bi=(i_1\dots,i_n)$ and let $\be_k$ be the $k$-th unit vector in the same lattice.
-  A \emph{signature matrix} is a symmetric $n\times n$ matrix $\bepsilon=(\epsilon_{k\ell})$ with $\epsilon_{k\ell}=\pm 1$ whenever $k\neq \ell$ and $\epsilon_{kk}=-1$. 
+  A \emph{signature matrix} is a symmetric $n\times n$ matrix $\bepsilon=(\epsilon_{k\ell})$ with $\epsilon_{k\ell}=\pm 1$ whenever $k\neq \ell$ and $\epsilon_{kk}=-1$.
   \begin{definition}
-    Fix a signature matrix $\bepsilon$.  
+    Fix a signature matrix $\bepsilon$.
     An array $(a_{\bi})_{\bi\in\ZZ^n}$ with $a_{\bi}\in\ZZ_{>0}$ is called an \emph{$\bepsilon$-$\SL_2$-tiling of $\ZZ^n$} if for each $k \neq\ell$ we have
     \begin{equation}\label{eq:higher sl2 recursion}
       a_{\bi+\be_\ell}a_{\bi+\be_k}-a_{\bi}a_{\bi+\be_k+\be_\ell}=\epsilon_{k\ell}.
     \end{equation}
   \end{definition}
   The requirement on the diagonal entries of signature matrices might seem arbitrary right now because they do not play any role in the above definition; we will see later on that it is indeed a consistent choice.
-  
-  In the case $n=2$ there are only two possible signature matrices recovering the notions of $\SL_2$-tilings and anti-$\SL_2$-tilings of $\ZZ^2$. 
-  
+
+  In the case $n=2$ there are only two possible signature matrices recovering the notions of $\SL_2$-tilings and anti-$\SL_2$-tilings of $\ZZ^2$.
+
   The following is a portion of an $\bepsilon$-$\SL_2$-tiling of $\ZZ^3$ with all entries of $\bepsilon$ equal to $-1$.
   \begin{center}
     \begin{tikzpicture}[x=1.7cm, y=1.3cm, z={(-1.3cm,-0.73cm)}]
@@ -195,8 +198,8 @@ Paris-Saclay, 91405 Orsay, France.}
   The situation is more complicated when $n\geq 3$ since not all the signature matrices are equivalent.
   On the other hand there are easy ways of constructing signature matrices equivalent to a given signature matrix $\bepsilon$.
   \begin{lemma}\label{le:flip}
-    Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}$ for the matrix obtained from $\bepsilon$ by changing the sign of all the entries in row $r$ and column $r$, leaving the diagonal entries fixed. 
-    That is, $\bepsilon^{(r)} =(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if exactly one of $k$ and $\ell$ equals $r$ and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise. 
+    Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}$ for the matrix obtained from $\bepsilon$ by changing the sign of all the entries in row $r$ and column $r$, leaving the diagonal entries fixed.
+    That is, $\bepsilon^{(r)} =(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if exactly one of $k$ and $\ell$ equals $r$ and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise.
     If $(a_{\bi})_{\bi\in\ZZ^n}$ is an $\bepsilon$-$\SL_2$-tiling, then taking $b_{\bi}=a_{\bi-2i_r\be_r}$ gives an $\bepsilon^{(r)}-\SL_2$-tiling.
   \end{lemma}
   \begin{proof}
@@ -212,7 +215,7 @@ Paris-Saclay, 91405 Orsay, France.}
     Then for any $r\in\ZZ$ the set $\{a_{\bi}: \sum_{j=1}^n i_j=r\}$ consists of a single element.
   \end{lemma}
   \begin{proof}
-    We will show that the value of $a_{\bi+\be_k}$ depends only on $a_{\bi}$. 
+    We will show that the value of $a_{\bi+\be_k}$ depends only on $a_{\bi}$.
     This is enough to conclude our claim because any vector in $\ZZ^n$ that sum up to a given integer $r$ can be obtained  from any other with the same property ``zig-zagging'' up and down by alternatively adding and subtracting unit vectors.
 
     Pick any three distinct indices $j,k,\ell\in[1,n]$.
@@ -220,13 +223,13 @@ Paris-Saclay, 91405 Orsay, France.}
     For simplicity of notation we set:
     \[
       \epsilon_{jk}=\epsilon_{j\ell}=\epsilon_{k\ell}=\epsilon,
-      \quad\quad 
+      \quad\quad
       a_{\bi}=a,
-      \quad\quad 
+      \quad\quad
       a_{\bi+\be_j}=x,
-      \quad\quad 
+      \quad\quad
       a_{\bi+\be_k}=y,
-      \quad\quad 
+      \quad\quad
       a_{\bi+\be_\ell}=z.
     \]
     The following picture will be useful.
@@ -250,12 +253,12 @@ Paris-Saclay, 91405 Orsay, France.}
     Using \eqref{eq:higher sl2 recursion} three times we get
     \[
       a_{\bi+\be_j+\be_k}=\frac{xy-\epsilon}{a},
-      \quad\quad 
+      \quad\quad
       a_{\bi+\be_k+\be_\ell}=\frac{yz-\epsilon}{a},
-      \quad\quad 
+      \quad\quad
       a_{\bi+\be_j+\be_\ell}=\frac{xz-\epsilon}{a}.
     \]
-    Then applying \eqref{eq:higher sl2 recursion} three more times gives 
+    Then applying \eqref{eq:higher sl2 recursion} three more times gives
     \begin{equation*}
       a_{\bi+\be_j+\be_k+\be_\ell}=\left\{
         \begin{array}{l}
@@ -264,23 +267,23 @@ Paris-Saclay, 91405 Orsay, France.}
           \frac{a_{\bi+\be_j+\be_\ell}a_{\bi+\be_k+\be_\ell}-\epsilon}{a_{\bi+\be_\ell}}=\frac{xyz}{a^2}-\epsilon\frac{x+y}{a^2}-\epsilon\frac{a^2-\epsilon}{a^2z}
         \end{array}\right.
     \end{equation*}
-    It follows that $\frac{x-y}{a^2}=\frac{a^2-\epsilon}{a^2x}-\frac{a^2-\epsilon}{a^2y}$ or $(xy+a^2-\epsilon)(x-y)=0$.  
-    But $xy+a^2-\epsilon\ge1$ since $a,x,y\ge1$, hence $x=y$.  
+    It follows that $\frac{x-y}{a^2}=\frac{a^2-\epsilon}{a^2x}-\frac{a^2-\epsilon}{a^2y}$ or $(xy+a^2-\epsilon)(x-y)=0$.
+    But $xy+a^2-\epsilon\ge1$ since $a,x,y\ge1$, hence $x=y$.
     Similarly $y=z$.
     The result then follows by iterating on all possible triples of distinct indices.
   \end{proof}
 
   We now come to our first main result: in dimension $n$, an ``infinite staircase'' of $1$'s yields the only possible anti-$\SL_2$-tiling.
 
-  \begin{theorem} 
+  \begin{theorem}
     \label{thm:antitiling}
-    For $n\ge3$, there exists a unique (up to translation) anti-$\SL_2$-tiling of $\ZZ^n$. 
+    For $n\ge3$, there exists a unique (up to translation) anti-$\SL_2$-tiling of $\ZZ^n$.
     Any of its ``two dimensional slices'' obtained by fixing all but two of the entries of $\bi$ is a translation of the staircase anti-$\SL_2$-tiling of $\ZZ^2$ from Example \ref{ex:Fibonacci}.
     In particular, all the integers appearing are odd Fibonacci numbers.
-  \end{theorem}  
+  \end{theorem}
   \begin{proof}
-    Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is an anti-$\SL_2$-tiling of $\ZZ^n$.  
-    Pick $\bi$ with $a_{\bi}$ minimal.  
+    Assume $(a_{\bi})_{\bi\in\ZZ^n}$ is an anti-$\SL_2$-tiling of $\ZZ^n$.
+    Pick $\bi$ with $a_{\bi}$ minimal.
     Applying \eqref{eq:higher sl2 recursion} gives
     \[
       a_{\bi+\be_1}a_{\bi-\be_2}=a_{\bi}a_{\bi+\be_1-\be_2}+1=a_{\bi}^2+1,
@@ -309,7 +312,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{proof}
 
   \begin{corollary}\label{co:n=3}
-    For $n=3$, there are precisely $4$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\SL_2$-tiling. 
+    For $n=3$, there are precisely $4$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\SL_2$-tiling.
     For such $\bepsilon$, this $\bepsilon$-$\SL_2$-tiling is unique (up to translation).
     More precisely, an $\bepsilon$-$\SL_2$-tiling exists if and only if $\epsilon_{12}\epsilon_{13}\epsilon_{23}=-1$.
   \end{corollary}
@@ -325,19 +328,19 @@ Paris-Saclay, 91405 Orsay, France.}
     Whenever an $\bepsilon$-$\SL_2$-tiling exists, it is unique up to translation.
   \end{theorem}
   \begin{proof}
-    Let $(a_{\bi})_{\bi\in\ZZ^n}$ be an $\bepsilon$-$\SL_2$-tiling of $\ZZ^n$. 
+    Let $(a_{\bi})_{\bi\in\ZZ^n}$ be an $\bepsilon$-$\SL_2$-tiling of $\ZZ^n$.
     Fixing all but any three distinct entries of $\bi$ gives an $\bepsilon'$-tiling of $\ZZ^3$ whose signature matrix $\bepsilon'$ is the submatrix of $\bepsilon$ with the corresponding rows and columns.
     Therefore, it follows from Corollary \ref{co:n=3} that we have an inclusion $E \subset E'$, where $E$ is the set of $n\times n$ signature matrices $\bepsilon$ which admit an $\bepsilon$-$\SL_2$-tiling, and $E'$ is the set of $n\times n$ signature matrices $\bepsilon$ satisfying $\epsilon_{jk} \epsilon_{k\ell} \epsilon_{j\ell} = -1$ for any triple of distinct indices $j,k,\ell$.
 
     Any row (or equivalently any column) of a matrix $\bepsilon$ in $E'$ determines uniquely all the remaining entries of $\bepsilon$, moreover all possible choices of entries in this fixed row (or equivalently column) are allowed.
-    Indeed, assume for the sake of clarity that the matrix $\bepsilon$ has been computed using row $1$, then 
+    Indeed, assume for the sake of clarity that the matrix $\bepsilon$ has been computed using row $1$, then
     \[
       \epsilon_{jk} \epsilon_{k\ell} \epsilon_{j\ell} = (-\epsilon_{1k}\epsilon_{1j})(-\epsilon_{1k}\epsilon_{1\ell})(-1\epsilon_{1j}\epsilon_{1\ell})=-1.
     \]
     Therefore $E'$ is in bijection with $\{\pm 1\}^{n-1}$ and $\#E'= 2^{n-1}$.
 
-    Using Lemma \ref{le:flip}, there is an action of $(\ZZ/2\ZZ)^{n-1}$ on $E$ given by $\bepsilon \mapsto \bepsilon^{(r)}$ for $1 \leq r \leq n-1$. 
-    This action is free; indeed the only element of $(\ZZ/2\ZZ)^{n-1}$ leaving invariant the last column of any given matrix of $E$ is the identity. 
+    Using Lemma \ref{le:flip}, there is an action of $(\ZZ/2\ZZ)^{n-1}$ on $E$ given by $\bepsilon \mapsto \bepsilon^{(r)}$ for $1 \leq r \leq n-1$.
+    This action is free; indeed the only element of $(\ZZ/2\ZZ)^{n-1}$ leaving invariant the last column of any given matrix of $E$ is the identity.
     Thanks to Theorem \ref{thm:antitiling}, $E$ is not empty and so we compute $\#E \geq 2^{n-1} = \# E' \geq \#E$ and deduce that $E = E'$.
 
     The uniqueness claim also follows immediately from Corollary \ref{co:n=3} by fixing all but any three distinct entries of $\bi$.
@@ -345,15 +348,15 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{proof}
 
   Note that the claim of Theorem \ref{thm:classification} could be rephrased by saying that, up to fixing the origin and choosing the orientation of each of the coordinate axes, there is a unique tiling of $\ZZ^n$ for $n\ge3$.
-  
+
   \begin{remark}
     It is now clear why we choose the diagonal entries of $\bepsilon$ to be equal to $-1$: any $\bepsilon$-$\SL_2$-tiling consists of odd Fibonacci numbers and \eqref{eq:higher sl2 recursion} is satisfied also for $k=\ell$.
-  \end{remark} 
+  \end{remark}
 
 \section*{Acknowledgements}
-  These results were obtained while we were taking part in the Conference on Cluster Algebras and Representation Theory at the KIAS in Seoul, South Korea. 
+  These results were obtained while we were taking part in the Conference on Cluster Algebras and Representation Theory at the KIAS in Seoul, South Korea.
   We would like to thank the organizers of that meeting for the stimulating environment they provided.
-  
+
   We are especially grateful to Peter J\o rgensen for his very inspiring talk at the same conference: the results presented here are the content of the exciting discussion he sparked.
 
 \begin{thebibliography}{99}
