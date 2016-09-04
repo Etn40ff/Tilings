@@ -193,10 +193,10 @@ Paris-Saclay, 91405 Orsay, France.}
     \end{tikzpicture}
   \end{center}
 
-  We will say that two signature matrices $\bepsilon$ and $\bepsilon'$ are \emph{equivalent} if any $\bepsilon$-$\SL_2$-tiling can be made into a $\bepsilon'$-$\SL_2$-tiling applying some linear transformation to its indices.
-  By Lemma~\ref{lem:n=2 equivalent} all signature matrices with $n=2$ are equivalent.
+  We will say that two $n\times n$ signature matrices $\bepsilon$ and $\bepsilon'$ are \emph{equivalent} if any $\bepsilon$-$\SL_2$-tiling of $\ZZ^n$ can be made into an $\bepsilon'$-$\SL_2$-tiling of $\ZZ^n$ by applying some linear transformation to its indices (i.e. elements of $\ZZ^n$).
+  By Lemma~\ref{lem:n=2 equivalent}, all signature matrices with $n=2$ are equivalent.
   The situation is more complicated when $n\geq 3$ since not all the signature matrices are equivalent.
-  On the other hand there are easy ways of constructing signature matrices equivalent to a given signature matrix $\bepsilon$.
+  On the other hand, there are easy ways of constructing signature matrices equivalent to a given signature matrix $\bepsilon$.
   \begin{lemma}\label{le:flip}
     Let $\bepsilon=(\epsilon_{k\ell})$ be any signature matrix and write $\bepsilon^{(r)}$ for the matrix obtained from $\bepsilon$ by changing the sign of all the entries in row $r$ and column $r$, leaving the diagonal entries fixed.
     That is, $\bepsilon^{(r)} =(\epsilon'_{k\ell})$ where $\epsilon'_{k\ell}=-\epsilon_{k\ell}$ if exactly one of $k$ and $\ell$ equals $r$ and $\epsilon'_{k\ell}=\epsilon_{k\ell}$ otherwise.
@@ -204,7 +204,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{lemma}
   \begin{proof}
     Indeed all the relations (\ref{eq:higher sl2 recursion}) not involving the index $k$ are satisfied for $(b_{\bi})_{\bi\in\ZZ^n}$ because they are satisfied for $(a_{\bi})_{\bi\in\ZZ^n}$.
-    The relations involving the index $k$, instead, when passing form $(a_{\bi})_{\bi\in\ZZ^n}$ to $(b_{\bi})_{\bi\in\ZZ^n}$ pick up a sign as desired.
+    However, the relations involving the index $k$ pick up a sign when passing from $(a_{\bi})_{\bi\in\ZZ^n}$ to $(b_{\bi})_{\bi\in\ZZ^n}$, as desired.
   \end{proof}
   \begin{definition}
     If $\bepsilon$ is a signature matrix such that $\epsilon_{k\ell}=1$ (resp. $\epsilon_{k\ell}=-1$) whenever $k\neq\ell$, we refer to an $\bepsilon$-$\SL_2$-tiling as an \emph{$\SL_2$-tiling} (resp. \emph{anti-$\SL_2$-tiling}) of $\ZZ^n$.
@@ -216,7 +216,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \end{lemma}
   \begin{proof}
     We will show that the value of $a_{\bi+\be_k}$ depends only on $a_{\bi}$.
-    This is enough to conclude our claim because any vector in $\ZZ^n$ that sum up to a given integer $r$ can be obtained  from any other with the same property ``zig-zagging'' up and down by alternatively adding and subtracting unit vectors.
+    This is enough to conclude our claim because any vector in $\ZZ^n$ whose entries sum up to a given integer $r$ can be obtained from any other with the same property via ``zig-zagging'' up and down by simultaneously adding and subtracting unit vectors.
 
     Pick any three distinct indices $j,k,\ell\in[1,n]$.
     To prove our claim we compute $a_{\bi+\be_j+\be_k+\be_\ell}$ in terms of $a_{\bi}, a_{\bi+\be_j}, a_{\bi+\be_k}, a_{\bi+\be_\ell}$ in three different ways.
@@ -270,7 +270,7 @@ Paris-Saclay, 91405 Orsay, France.}
     It follows that $\frac{x-y}{a^2}=\frac{a^2-\epsilon}{a^2x}-\frac{a^2-\epsilon}{a^2y}$ or $(xy+a^2-\epsilon)(x-y)=0$.
     But $xy+a^2-\epsilon\ge1$ since $a,x,y\ge1$, hence $x=y$.
     Similarly $y=z$.
-    The result then follows by iterating on all possible triples of distinct indices.
+    The result then follows by iterating on all possible triples of distinct indices $j,k,\ell$.
   \end{proof}
 
   We now come to our first main result: in dimension $n$, an ``infinite staircase'' of $1$'s yields the only possible anti-$\SL_2$-tiling.
@@ -278,7 +278,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \begin{theorem}
     \label{thm:antitiling}
     For $n\ge3$, there exists a unique (up to translation) anti-$\SL_2$-tiling of $\ZZ^n$.
-    Any of its ``two dimensional slices'' obtained by fixing all but two of the entries of $\bi$ is a translation of the staircase anti-$\SL_2$-tiling of $\ZZ^2$ from Example \ref{ex:Fibonacci}.
+    Any of its ``two-dimensional slices'' obtained by fixing all but two of the entries of $\bi$ is a translation of the staircase anti-$\SL_2$-tiling of $\ZZ^2$ from Example \ref{ex:Fibonacci}.
     In particular, all the integers appearing are odd Fibonacci numbers.
   \end{theorem}
   \begin{proof}
@@ -314,7 +314,7 @@ Paris-Saclay, 91405 Orsay, France.}
   \begin{corollary}\label{co:n=3}
     For $n=3$, there are precisely $4$ signature matrices $\bepsilon$ for which there exists an $\bepsilon$-$\SL_2$-tiling.
     For such $\bepsilon$, this $\bepsilon$-$\SL_2$-tiling is unique (up to translation).
-    More precisely, an $\bepsilon$-$\SL_2$-tiling exists if and only if $\epsilon_{12}\epsilon_{13}\epsilon_{23}=-1$.
+    More precisely, an $\bepsilon$-$\SL_2$-tiling of $\ZZ^3$ exists if and only if $\epsilon_{12}\epsilon_{13}\epsilon_{23}=-1$.
   \end{corollary}
   \begin{proof}
     The claim follows immediately from the observation that any signature matrix for $n=3$ is either one of the two satisfying $\epsilon_{12}=\epsilon_{13}=\epsilon_{23}$ or is obtained from one of these with a single application of Lemma~\ref{le:flip}.
@@ -332,10 +332,10 @@ Paris-Saclay, 91405 Orsay, France.}
     Fixing all but any three distinct entries of $\bi$ gives an $\bepsilon'$-tiling of $\ZZ^3$ whose signature matrix $\bepsilon'$ is the submatrix of $\bepsilon$ with the corresponding rows and columns.
     Therefore, it follows from Corollary \ref{co:n=3} that we have an inclusion $E \subset E'$, where $E$ is the set of $n\times n$ signature matrices $\bepsilon$ which admit an $\bepsilon$-$\SL_2$-tiling, and $E'$ is the set of $n\times n$ signature matrices $\bepsilon$ satisfying $\epsilon_{jk} \epsilon_{k\ell} \epsilon_{j\ell} = -1$ for any triple of distinct indices $j,k,\ell$.
 
-    Any row (or equivalently any column) of a matrix $\bepsilon$ in $E'$ determines uniquely all the remaining entries of $\bepsilon$, moreover all possible choices of entries in this fixed row (or equivalently column) are allowed.
+    Any row (or equivalently any column) of a matrix $\bepsilon$ in $E'$ uniquely determines all the remaining entries of $\bepsilon$, moreover all possible choices of entries in this fixed row (or equivalently column) are allowed.
     Indeed, assume for the sake of clarity that the matrix $\bepsilon$ has been computed using row $1$, then
     \[
-      \epsilon_{jk} \epsilon_{k\ell} \epsilon_{j\ell} = (-\epsilon_{1k}\epsilon_{1j})(-\epsilon_{1k}\epsilon_{1\ell})(-1\epsilon_{1j}\epsilon_{1\ell})=-1.
+      \epsilon_{jk} \epsilon_{k\ell} \epsilon_{j\ell} = (-\epsilon_{1k}\epsilon_{1j})(-\epsilon_{1k}\epsilon_{1\ell})(-\epsilon_{1j}\epsilon_{1\ell})=-1.
     \]
     Therefore $E'$ is in bijection with $\{\pm 1\}^{n-1}$ and $\#E'= 2^{n-1}$.
 
@@ -357,7 +357,7 @@ Paris-Saclay, 91405 Orsay, France.}
   These results were obtained while we were taking part in the Conference on Cluster Algebras and Representation Theory at the KIAS in Seoul, South Korea.
   We would like to thank the organizers of that meeting for the stimulating environment they provided.
 
-  We are especially grateful to Peter J\o rgensen for his very inspiring talk at the same conference: the results presented here are the content of the exciting discussion he sparked.
+  We are especially grateful to Peter J\o rgensen for his very inspiring talk at the same conference: the results presented here are the content of the exciting discussions he sparked.
 
 \begin{thebibliography}{99}
   \bibitem{AssemReutenauerSmith} Ibrahim Assem, Christophe Reutenauer and David Smith, \emph{Friezes}, Advances in Mathematics {\bf 225} (2010), 3134-3165.
